@@ -1,6 +1,6 @@
 # 🌄 WildSteps – Adventure & Trekking Website
 
-A **Full-stack MERN** (MongoDB, Express, React, Node.js) project inspired by [Elite Exped](https://www.eliteexped.com), built for educational purposes to explore modern web development practices, animations, API design, and admin-controlled content management for adventure expeditions and trekking.
+A **Full-stack MERN** (MongoDB, Express, React, Node.js) project, built for educational purposes to explore modern web development practices, animations, API design, and admin-controlled content management for adventure expeditions and trekking.
 
 ## 🚀 Features
 
