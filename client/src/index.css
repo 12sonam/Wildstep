@@ -58,4 +58,36 @@
 
 .swiper-slide-active:hover {
   transform: none;
+}
+
+/* Swiper Styles */
+.trek-swiper {
+  padding: 20px 10px 50px !important;
+}
+
+.trek-swiper .swiper-button-next,
+.trek-swiper .swiper-button-prev {
+  color: #F28C38;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.trek-swiper .swiper-button-next:after,
+.trek-swiper .swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.trek-swiper .swiper-pagination-bullet {
+  background: #F28C38;
+}
+
+.trek-swiper .swiper-pagination-bullet-active {
+  background: #E67D29;
+}
+
+/* Add smooth scrolling to the whole page */
+html {
+  scroll-behavior: smooth;
 } 
