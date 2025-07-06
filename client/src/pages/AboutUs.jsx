@@ -99,14 +99,41 @@ const AboutUs = () => {
           </div>
         </motion.div>
 
-        {/* An Elite Leadership Team */}
+        {/* Leading from the Front */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <h2 className="text-5xl font-bold text-gray-800 mb-4">An elite leadership team</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-8">Leading from the front</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1522527488539-682fa7ac0a3e?ixlib=rb-4.0.3"
+                alt="Grand Canyon Sunset"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                While others might direct from a distance, our founders lead from the front. Our guides are born mountaineers and certified mountain experts who continue to lead expeditions every season. This hands-on approach ensures that every expedition benefits from direct, experienced leadership.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                At Wild Steps, we understand why you climb, because we feel the same way. Our shared passion for the mountains drives us to help you achieve your goals. We want to show you how it feels to stand on top of the world, and we'll be right there with you every step of the way.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* A WildSteps Leadership Team */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-20"
+        >
+          <h2 className="text-5xl font-bold text-gray-800 mb-4">A WildSteps leadership team</h2>
           <div className="w-16 h-1 bg-[#F28C38] mb-8"></div>
           <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mb-16">
             Some direct operations from a back office. Our company directors prefer to lead in another way, from the front. Each expedition is personally led by our experienced team of mountaineers who have set records and made history in the Himalayas.
@@ -167,33 +194,6 @@ const AboutUs = () => {
                 alt="Dawa Sherpa"
                 className="w-full h-full object-cover"
               />
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Leading from the Front */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <h2 className="text-4xl font-bold text-gray-800 mb-8">Leading from the front</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                alt="Mountain Leadership"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                While others might direct from a distance, our founders lead from the front. Our guides are born mountaineers and certified mountain experts who continue to lead expeditions every season. This hands-on approach ensures that every expedition benefits from direct, experienced leadership.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                At Wild Steps, we understand why you climb, because we feel the same way. Our shared passion for the mountains drives us to help you achieve your goals. We want to show you how it feels to stand on top of the world, and we'll be right there with you every step of the way.
-              </p>
             </div>
           </div>
         </motion.div>

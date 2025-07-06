@@ -268,7 +268,7 @@ export default function Navbar() {
                                 className="block mt-4 py-2 text-xs font-medium text-[#F28C38] hover:text-white transition-colors px-4"
                               >
                                 ALL EXPEDITIONS →
-                              </Link>
+              </Link>
                             </div>
                             
                             {/* Right side - Featured content */}
@@ -346,14 +346,14 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
+        {isMobileMenuOpen && (
+          <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden mt-4"
-            >
+            transition={{ duration: 0.2 }}
+            className="md:hidden mt-4"
+          >
               <div className="flex flex-col space-y-2 pb-4">
                 {navItems.map((item) => (
                   <div key={item.name} className="space-y-2">
@@ -390,14 +390,14 @@ export default function Navbar() {
                             {dropdownItem.subItems && activeDropdown === dropdownItem.name && (
                               <div className="pl-4 space-y-2 mt-2">
                                 {dropdownItem.subItems.map((subItem) => (
-                                  <Link
+                <Link
                                     key={subItem.name}
                                     to={subItem.path}
                                     className="block text-gray-400 hover:text-[#F28C38] text-sm"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                  >
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                                     {subItem.name}
-                                  </Link>
+                </Link>
                                 ))}
                               </div>
                             )}
@@ -406,10 +406,10 @@ export default function Navbar() {
                       </div>
                     )}
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
+              ))}
+            </div>
+          </motion.div>
+        )}
         </AnimatePresence>
       </div>
     </nav>

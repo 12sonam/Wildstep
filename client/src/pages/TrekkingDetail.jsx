@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const TrekkingDetail = () => {
   const [activeTab, setActiveTab] = useState('itinerary');
 
-  return (
+    return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <div className="relative h-screen">
@@ -69,7 +69,7 @@ const TrekkingDetail = () => {
               </Link>
             </motion.div>
           </motion.div>
-        </div>
+      </div>
 
         {/* Scroll Indicator */}
         <motion.div
@@ -108,7 +108,7 @@ const TrekkingDetail = () => {
                   villages, and dramatic suspension bridges. As you ascend, the landscape transforms 
                   into a high-altitude wilderness of moraines, glaciers, and towering peaks.
                 </p>
-              </div>
+      </div>
 
               {/* Trek Highlights */}
               <div className="space-y-6">
@@ -137,10 +137,10 @@ const TrekkingDetail = () => {
                         />
                       </svg>
                       <span className="text-white">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          </div>
+            ))}
+          </div>
+        </div>
             </div>
 
             {/* Trek Info Sidebar */}
@@ -172,7 +172,7 @@ const TrekkingDetail = () => {
                     <span className="text-gray-400">Price from</span>
                     <span className="text-2xl font-bold text-[#F28C38]">$2,900</span>
                   </div>
-                </div>
+            </div>
 
                 {/* CTA Button */}
                 <Link
@@ -181,7 +181,7 @@ const TrekkingDetail = () => {
                 >
                   Book Your Trek
                 </Link>
-              </div>
+            </div>
             </div>
           </div>
 
@@ -289,7 +289,7 @@ const TrekkingDetail = () => {
                 <h2 className="text-3xl font-bold text-white">What's Included</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Included */}
-                  <div className="space-y-4">
+            <div className="space-y-4">
                     <h3 className="text-xl font-bold text-white">Included in the Price</h3>
                     {[
                       'All ground transportation as per itinerary',
@@ -330,9 +330,9 @@ const TrekkingDetail = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                         <span className="text-gray-300">{item}</span>
-                      </div>
-                    ))}
-                  </div>
+                </div>
+              ))}
+            </div>
                 </div>
               </div>
             )}
@@ -376,7 +376,7 @@ const TrekkingDetail = () => {
                       <li>• Simple but nutritious meals</li>
                       <li>• Warm sleeping bags required</li>
                     </ul>
-                  </div>
+          </div>
 
                   {/* Cultural Considerations */}
                   <div className="bg-gray-900 rounded-lg p-6 space-y-4">
@@ -426,7 +426,7 @@ const TrekkingDetail = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+            </div>
             )}
           </div>
         </div>

@@ -16,4 +16,46 @@
   .btn-secondary {
     @apply px-4 py-2 font-semibold text-primary-700 bg-primary-100 rounded-lg hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
+}
+
+/* Adventure Swiper styles */
+.adventure-swiper {
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+}
+
+.adventure-swiper .swiper-slide {
+  opacity: 1;
+  height: 500px;
+}
+
+/* Hide default Swiper navigation */
+.adventure-swiper .swiper-button-next,
+.adventure-swiper .swiper-button-prev {
+  display: none;
+}
+
+/* Custom navigation buttons */
+.custom-prev,
+.custom-next {
+  color: #F28C38;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  color: white;
+}
+
+/* Remove old swiper styles */
+.swiper-slide {
+  opacity: 1;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+.swiper-slide-active:hover {
+  transform: none;
 } 
