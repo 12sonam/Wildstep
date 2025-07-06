@@ -8,7 +8,7 @@ import Expeditions from './pages/Expeditions';
 import ExpeditionDetail from './pages/ExpeditionDetail';
 import Trekking from './pages/Trekking';
 import TrekkingDetail from './pages/TrekkingDetail';
-import About from './pages/About';
+import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Login from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
@@ -36,7 +36,7 @@ function App() {
           <Route path="/expeditions/:id" element={<ExpeditionDetail />} />
           <Route path="/trekking" element={<Trekking />} />
           <Route path="/trekking/:id" element={<TrekkingDetail />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route
             path="/admin/login"

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from 'react-icons/fa';
+import Hero from '../components/Hero';
 
 // Image URLs (replace with your actual high-quality images)
 const heroImage = 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3';
@@ -23,39 +24,10 @@ const leaders = [
   { name: 'Leader 3', title: 'Technical Lead', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3' },
 ];
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="bg-black">
-      {/* Hero section */}
-      <div className="relative h-screen">
-        <div className="absolute inset-0">
-          <img
-            className="w-full h-full object-cover"
-            src={heroImage}
-            alt="Snow-covered mountain peak"
-          />
-          <div className="absolute inset-0 bg-black opacity-40" />
-        </div>
-        <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl font-extrabold tracking-wider text-white sm:text-7xl lg:text-8xl mb-4"
-          >
-            The Untamed Summit
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl text-[#F28C38] font-semibold"
-          >
-            Bookings Open for 2026
-          </motion.p>
-        </div>
-      </div>
-
+      <Hero />
       {/* Adventure options section */}
       <div className="bg-black py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -214,4 +186,6 @@ export default function Home() {
       </div>
     </div>
   );
-} 
+};
+
+export default Home; 

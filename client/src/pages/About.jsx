@@ -11,6 +11,49 @@ export default function About() {
       >
         <h1 className="text-4xl font-bold mb-8">About WildSteps</h1>
         
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl font-semibold text-gray-800 mb-6">The safest pair of hands possible</h2>
+          <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-12">
+            <div className="max-w-3xl">
+              <p className="text-gray-700 text-lg mb-6">
+                We oversee every aspect of expedition planning and preparation to ensure that it meets our exacting safety standards. Our team's extensive experience allows us to keep everything in-house - from ferrying in food, to finding icefall routes, to managing our own equipment. This means we're never left reliant on third parties.
+              </p>
+              <p className="text-gray-700 text-lg">
+                The success of this approach is reflected in our record - our expert guides maintain a 100% safety record on all high-altitude expeditions. We believe that thorough preparation and experienced leadership are the foundations of successful mountaineering.
+              </p>
+            </div>
+          </div>
+
+          <h2 className="text-3xl font-semibold text-gray-800 mb-6">Leading from the front</h2>
+          <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-12">
+            <div className="max-w-3xl">
+              <p className="text-gray-700 text-lg mb-6">
+                While others might direct from a distance, our founders lead from the front. Our guides are born mountaineers and certified mountain experts who continue to lead expeditions every season. This hands-on approach ensures that every expedition benefits from direct, experienced leadership.
+              </p>
+              <p className="text-gray-700 text-lg">
+                At Wild Steps, we understand why you climb, because we feel the same way. Our shared passion for the mountains drives us to help you achieve your goals. We want to show you how it feels to stand on top of the world, and we'll be right there with you every step of the way.
+              </p>
+            </div>
+          </div>
+
+          <h2 className="text-3xl font-semibold text-gray-800 mb-6">An elite leadership team</h2>
+          <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <div className="max-w-3xl">
+              <p className="text-gray-700 text-lg mb-6">
+                Our leadership team brings together decades of high-altitude mountaineering experience. Each expedition is led by IFMGA/UIAGM certified guides who have summited the world's highest peaks multiple times. This elite team ensures that every aspect of your journey is managed with expert precision and care.
+              </p>
+              <p className="text-gray-700 text-lg">
+                From technical climbing expertise to emergency response protocols, our leaders maintain the highest standards of professional mountaineering. Their deep knowledge of high-altitude environments and commitment to safety has earned us recognition as one of Nepal's most trusted expedition companies.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-primary-600">Our Story</h2>
