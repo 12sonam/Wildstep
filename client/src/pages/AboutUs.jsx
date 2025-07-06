@@ -72,78 +72,6 @@ const AboutUs = () => {
           </div>
         </motion.div>
 
-        {/* An Elite Leadership Team */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <h2 className="text-5xl font-bold text-gray-800 mb-4">An elite leadership team</h2>
-          <div className="w-16 h-1 bg-[#F28C38] mb-8"></div>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mb-16">
-            Some direct operations from a back office. Our company directors prefer to lead in another way, from the front. Each expedition is personally led by our experienced team of mountaineers who have set records and made history in the Himalayas.
-          </p>
-
-          {/* First Leader */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
-            <div className="relative h-[600px]">
-              <img 
-                src="https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-4.0.3"
-                alt="Pemba Sherpa"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <h3 className="text-5xl font-bold text-gray-800 mb-4">
-                Pemba
-                <br />
-                Sherpa
-              </h3>
-              <div className="w-16 h-1 bg-[#F28C38] mb-6"></div>
-              <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                With over two decades of high-altitude experience, Pemba has successfully guided more than 30 expeditions above 8,000m. His expertise includes multiple summits of Everest and K2, making him one of the most accomplished mountaineers in the Himalayas.
-              </p>
-              <Link 
-                to="/team/pemba"
-                className="inline-flex items-center text-[#F28C38] hover:text-[#F28C38]/80 transition-colors group"
-              >
-                <span className="mr-2 font-mono">Find out more</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Second Leader */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="flex flex-col justify-center">
-              <h3 className="text-5xl font-bold text-gray-800 mb-4">
-                Karma
-                <br />
-                Sherpa
-              </h3>
-              <div className="w-16 h-1 bg-[#F28C38] mb-6"></div>
-              <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                Long recognized as one of the finest mountain guides of his generation among the tight-knit Himalayan climbing community, Karma has been the go-to expert for technical routes and first ascents. His recent achievements include leading successful expeditions on some of the world's most challenging peaks.
-              </p>
-              <Link 
-                to="/team/karma"
-                className="inline-flex items-center text-[#F28C38] hover:text-[#F28C38]/80 transition-colors group"
-              >
-                <span className="mr-2 font-mono">Find out more</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
-            </div>
-            <div className="relative h-[600px]">
-              <img 
-                src="https://images.unsplash.com/photo-1522527488539-682fa7ac0a3e?ixlib=rb-4.0.3"
-                alt="Karma Sherpa"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </motion.div>
-
         {/* The Safest Pair of Hands */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -165,6 +93,78 @@ const AboutUs = () => {
               <img 
                 src="https://images.unsplash.com/photo-1489049392670-5c28923b5608?ixlib=rb-4.0.3"
                 alt="Mountain Safety"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* An Elite Leadership Team */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-20"
+        >
+          <h2 className="text-5xl font-bold text-gray-800 mb-4">An elite leadership team</h2>
+          <div className="w-16 h-1 bg-[#F28C38] mb-8"></div>
+          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mb-16">
+            Some direct operations from a back office. Our company directors prefer to lead in another way, from the front. Each expedition is personally led by our experienced team of mountaineers who have set records and made history in the Himalayas.
+          </p>
+
+          {/* First Leader */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+            <div className="relative h-[600px]">
+              <img 
+                src="https://images.unsplash.com/photo-1501554728187-ce583db33af7?ixlib=rb-4.0.3"
+                alt="Phurdawa Sherpa"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <h3 className="text-5xl font-bold text-gray-800 mb-4">
+                Phurdawa
+                <br />
+                Sherpa
+              </h3>
+              <div className="w-16 h-1 bg-[#F28C38] mb-6"></div>
+              <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                With over two decades of high-altitude experience, Phurdawa has successfully guided more than 30 expeditions above 8,000m. His expertise includes multiple summits of Everest and K2, making him one of the most accomplished mountaineers in the Himalayas.
+              </p>
+              <Link 
+                to="/team/phurdawa"
+                className="inline-flex items-center text-[#F28C38] hover:text-[#F28C38]/80 transition-colors group"
+              >
+                <span className="mr-2 font-mono">Find out more</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Second Leader */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="flex flex-col justify-center">
+              <h3 className="text-5xl font-bold text-gray-800 mb-4">
+                Dawa
+                <br />
+                Sherpa
+              </h3>
+              <div className="w-16 h-1 bg-[#F28C38] mb-6"></div>
+              <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                Long recognized as one of the finest mountain guides of his generation among the tight-knit Himalayan climbing community, Dawa has been the go-to expert for technical routes and first ascents. His recent achievements include leading successful expeditions on some of the world's most challenging peaks.
+              </p>
+              <Link 
+                to="/team/dawa"
+                className="inline-flex items-center text-[#F28C38] hover:text-[#F28C38]/80 transition-colors group"
+              >
+                <span className="mr-2 font-mono">Find out more</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </div>
+            <div className="relative h-[600px]">
+              <img 
+                src="https://images.unsplash.com/photo-1522527488539-682fa7ac0a3e?ixlib=rb-4.0.3"
+                alt="Dawa Sherpa"
                 className="w-full h-full object-cover"
               />
             </div>
