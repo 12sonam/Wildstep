@@ -34,6 +34,7 @@ export const deleteExpedition = (id) => api.delete(`/expeditions/${id}`);
 // Trekking
 export const getTreks = () => api.get('/trekking');
 export const getTrek = (id) => api.get(`/trekking/${id}`);
+export const getTrekById = (id) => api.get(`/trekking/${id}`);
 export const createTrek = (data) => api.post('/trekking', data);
 export const updateTrek = (id, data) => api.put(`/trekking/${id}`, data);
 export const deleteTrek = (id) => api.delete(`/trekking/${id}`);

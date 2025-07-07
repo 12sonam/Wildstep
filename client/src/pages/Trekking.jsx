@@ -38,22 +38,10 @@ const TrekkingPage = () => {
       altitude: '4,130m'
     },
     {
-      id: 'khopra-ridge',
-      category: 'TREK',
-      title: 'Khopra Ridge Trek',
-      description: 'Experience the hidden gems of the Annapurna region with stunning views of Dhaulagiri, Annapurna South, and Nilgiri from the beautiful Khopra Ridge.',
-      image: 'https://images.unsplash.com/photo-1623207613517-afe2e80e5d6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
-      price: 1800,
-      season: 'Mar - May & Oct - Nov',
-      duration: '8-10 days',
-      difficulty: 'Moderate',
-      altitude: '3,660m'
-    },
-    {
       id: 'everest-three-pass',
       category: 'TREK',
       title: 'Everest Three Pass',
-      description: 'The ultimate Everest region trek, crossing three high passes and offering unparalleled views of the Himalayan giants.',
+      description: 'Challenge yourself with the ultimate high-altitude trek in the Everest region, crossing three passes over 5,000m.',
       image: 'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
       price: 4300,
       season: 'Oct - Nov',
@@ -65,7 +53,7 @@ const TrekkingPage = () => {
       id: 'manaslu-circuit',
       category: 'TREK',
       title: 'Manaslu Circuit',
-      description: 'A remote and spectacular trek around the world\'s eighth highest mountain, offering pristine landscapes and authentic village experiences.',
+      description: 'Trek around the eighth highest mountain in the world, experiencing pristine landscapes and authentic village life.',
       image: 'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
       price: 3200,
       season: 'Oct - Nov',
@@ -77,7 +65,7 @@ const TrekkingPage = () => {
       id: 'langtang-valley',
       category: 'TREK',
       title: 'Langtang Valley',
-      description: 'Known as the valley of glaciers, this trek offers stunning mountain views, diverse flora and fauna, and rich Tamang culture.',
+      description: 'Discover the valley of glaciers, pristine mountain landscapes, and rich Tamang culture.',
       image: 'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
       price: 1800,
       season: 'Oct - Nov',
@@ -89,31 +77,19 @@ const TrekkingPage = () => {
       id: 'upper-mustang',
       category: 'TREK',
       title: 'Upper Mustang',
-      description: 'Journey through the hidden kingdom of Lo, featuring dramatic landscapes, ancient monasteries, and preserved Tibetan culture.',
+      description: 'Journey through the hidden kingdom of Lo, featuring dramatic landscapes and preserved Tibetan culture.',
       image: 'https://images.unsplash.com/photo-1623207613517-afe2e80e5d6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
       price: 3500,
-      season: 'Oct - Nov',
+      season: 'Jun - Sep',
       duration: '12-14 days',
       difficulty: 'Moderate',
       altitude: '3,840m'
     },
     {
-      id: 'annapurna-circuit',
-      category: 'TREK',
-      title: 'Annapurna Circuit',
-      description: 'One of the world\'s most diverse treks, featuring dramatic deep valleys, Buddhist temples, and the world\'s deepest gorge.',
-      image: 'https://images.unsplash.com/photo-1589182337358-2cb63099350c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 2800,
-      season: 'Oct - Nov',
-      duration: '15-17 days',
-      difficulty: 'Moderate',
-      altitude: '5,416m'
-    },
-    {
       id: 'gokyo-lakes',
       category: 'TREK',
       title: 'Gokyo Lakes',
-      description: 'Trek to the world\'s highest freshwater lake system, offering spectacular views of four 8,000m peaks including Mount Everest.',
+      description: 'Trek to the world\'s highest freshwater lake system, offering spectacular views of four 8,000m peaks.',
       image: 'https://images.unsplash.com/photo-1515876305430-f06edab8282a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
       price: 2600,
       season: 'Oct - Nov',
@@ -122,66 +98,57 @@ const TrekkingPage = () => {
       altitude: '5,357m'
     },
     {
-      id: 'kanchenjunga-base-camp',
+      id: 'khopra-ridge',
       category: 'TREK',
-      title: 'Kanchenjunga Base Camp',
-      description: 'A remote trek to the base of the world\'s third highest peak, featuring pristine wilderness and diverse ecosystems.',
-      image: 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 3800,
+      title: 'Khopra Ridge Trek',
+      description: 'A hidden gem offering panoramic views of the Annapurna and Dhaulagiri ranges.',
+      image: 'https://images.unsplash.com/photo-1570731617731-fb0aa4d9b9aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      price: 1800,
       season: 'Oct - Nov',
-      duration: '20-22 days',
-      difficulty: 'Challenging',
-      altitude: '5,143m'
+      duration: '8-10 days',
+      difficulty: 'Moderate',
+      altitude: '3,660m'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* Hero Section with Parallax */}
-      <div className="relative h-screen overflow-hidden">
-        <motion.div 
-          style={{ y }}
+    <div className="min-h-screen bg-black">
+      {/* Hero Section */}
+      <div className="relative h-screen">
+        <motion.div
+          style={{ y, opacity }}
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-            alt="Himalayan Mountains"
+            src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+            alt="Nepal Mountains"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/50 to-gray-900" />
+          <div className="absolute inset-0 bg-black/50"></div>
         </motion.div>
 
-        <motion.div 
-          style={{ opacity }}
-          className="relative h-full flex flex-col justify-center items-center text-white px-4"
-        >
-          <span className="inline-block bg-[#F28C38] text-white px-4 py-1 rounded-full text-sm mb-6">
-            HIMALAYAN TREKS
-          </span>
-          <motion.h1 
+        <div className="relative h-full flex flex-col justify-center items-center text-white px-4">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-4 text-center"
+            className="text-center space-y-6 max-w-4xl"
           >
-            Discover Nepal's Finest Treks
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-center max-w-3xl mb-8"
-          >
-            From classic routes to hidden gems, explore the world's most spectacular mountain trails
-          </motion.p>
-        </motion.div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
+              Discover Nepal's Finest Treks
+            </h1>
+            <p className="text-xl sm:text-2xl text-gray-300">
+              From classic routes to hidden gems, explore the world's most spectacular mountain trails
+            </p>
+          </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
         >
           <span className="text-white text-sm mb-2">Scroll to explore</span>
           <motion.div
