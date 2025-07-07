@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,104 +10,238 @@ import 'swiper/css/pagination';
 const TrekkingPage = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-
+  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+  
   const treks = [
     {
       id: 'everest-base-camp',
-      category: 'TREK',
-      title: 'Everest Base Camp',
-      description: 'The trek to Everest Base Camp is the world\'s most famous Himalayan adventure, offering stunning views of Mount Everest and surrounding peaks.',
+      title: 'Everest Base Camp Trek',
+      subtitle: 'Journey to the foot of the world\'s highest mountain',
+      overview: 'The Everest Base Camp trek is one of the most iconic treks in the world. Journey through the Khumbu region, home to the Sherpa people, ancient Buddhist monasteries, and breathtaking Himalayan vistas. Walk in the footsteps of legendary mountaineers to reach the base of Mount Everest (8,848m) while experiencing the rich cultural heritage of the Sherpa people.',
+      highlights: [
+        'Stand at Everest Base Camp (5,364m)',
+        'Sunrise view from Kala Patthar (5,545m)',
+        'Visit the historic Tengboche Monastery',
+        'Experience authentic Sherpa culture',
+        'Trek through the stunning Khumbu region',
+        'Views of Mt. Everest, Lhotse, and Ama Dablam',
+        'Explore Namche Bazaar, the gateway to Everest'
+      ],
       image: 'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 2900,
-      season: 'Oct - Nov',
-      duration: '12-14 days',
-      difficulty: 'Moderate',
-      altitude: '5,364m'
+      duration: '12-14 Days',
+      difficulty: 'Moderate to Challenging',
+      maxAltitude: '5,545m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Lukla',
+      price: 2900
     },
     {
       id: 'annapurna-base-camp',
-      category: 'TREK',
-      title: 'Annapurna Base Camp',
-      description: 'The trek to Annapurna Base Camp is a classic Himalayan journey, offering a perfect blend of mountain views and cultural experiences.',
+      title: 'Annapurna Base Camp Trek',
+      subtitle: 'Journey to the heart of the Annapurna Sanctuary',
+      overview: 'The Annapurna Base Camp trek leads you into the heart of the Annapurna Sanctuary, a natural amphitheater surrounded by peaks over 7,000m. Trek through diverse landscapes from lush rhododendron forests to glacial basins, experiencing the rich Gurung culture while witnessing some of the most spectacular mountain scenery in Nepal.',
+      highlights: [
+        'Reach Annapurna Base Camp (4,130m)',
+        'Sunrise over the Annapurna massif',
+        'Trek through diverse ecosystems',
+        'Experience Gurung culture and villages',
+        'Relax in Jhinu Danda hot springs',
+        'Views of Machapuchare (Fish Tail)',
+        'Explore traditional mountain villages'
+      ],
       image: 'https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 2500,
-      season: 'Oct - Nov',
-      duration: '10-12 days',
+      duration: '10-12 Days',
       difficulty: 'Moderate',
-      altitude: '4,130m'
+      maxAltitude: '4,130m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Pokhara',
+      price: 2500
     },
     {
       id: 'everest-three-pass',
-      category: 'TREK',
-      title: 'Everest Three Pass',
-      description: 'Challenge yourself with the ultimate high-altitude trek in the Everest region, crossing three passes over 5,000m.',
-      image: 'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 4300,
-      season: 'Oct - Nov',
-      duration: '18-20 days',
+      title: 'Everest Three High Passes Trek',
+      subtitle: 'The ultimate Everest region adventure',
+      overview: 'The Three High Passes Trek is the ultimate Himalayan adventure, designed for experienced trekkers seeking the most comprehensive Everest experience. This challenging route takes you across three spectacular passes - Kongma La (5,535m), Cho La (5,420m), and Renjo La (5,340m), while also including Everest Base Camp, Kala Patthar, and the stunning Gokyo Lakes.',
+      highlights: [
+        'Cross three challenging passes over 5,300m',
+        'Summit Kala Patthar (5,545m) for sunrise',
+        'Visit Everest Base Camp and Gokyo Lakes',
+        'Trek through remote Nangpa Valley',
+        'Climb Gokyo Ri for panoramic views',
+        'Experience authentic Sherpa culture',
+        'Visit ancient Tengboche Monastery'
+      ],
+      image: 'https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      duration: '20-22 Days',
       difficulty: 'Challenging',
-      altitude: '5,535m'
+      maxAltitude: '5,545m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Lukla',
+      price: 4300
     },
     {
       id: 'manaslu-circuit',
-      category: 'TREK',
-      title: 'Manaslu Circuit',
-      description: 'Trek around the eighth highest mountain in the world, experiencing pristine landscapes and authentic village life.',
+      title: 'Manaslu Circuit Trek',
+      subtitle: 'Adventure around the eighth highest mountain',
+      overview: 'The Manaslu Circuit Trek is a spectacular journey around Mount Manaslu (8,163m), the eighth highest mountain in the world. This restricted area trek offers pristine mountain views, rich Buddhist culture, and a challenging pass crossing. Experience the beauty of a less-traveled route that combines the best of Nepal\'s natural and cultural heritage.',
+      highlights: [
+        'Cross the challenging Larkya La Pass (5,160m)',
+        'Circuit around Mt. Manaslu (8,163m)',
+        'Experience authentic Tibetan culture',
+        'Trek through remote villages',
+        'Visit ancient Buddhist monasteries',
+        'Diverse landscapes and ecosystems',
+        'Less crowded alternative to popular treks'
+      ],
       image: 'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 3200,
-      season: 'Oct - Nov',
-      duration: '14-16 days',
+      duration: '14-16 Days',
       difficulty: 'Challenging',
-      altitude: '5,160m'
+      maxAltitude: '5,160m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Soti Khola',
+      price: 3200
     },
     {
       id: 'langtang-valley',
-      category: 'TREK',
-      title: 'Langtang Valley',
-      description: 'Discover the valley of glaciers, pristine mountain landscapes, and rich Tamang culture.',
+      title: 'Langtang Valley Trek',
+      subtitle: 'Valley of glaciers and mountain views',
+      overview: 'The Langtang Valley Trek offers an incredible experience in a valley known as the "Valley of Glaciers." Located close to Kathmandu, this trek features diverse landscapes, from lush forests to high-altitude meadows, and provides insights into the unique Tamang culture while showcasing spectacular views of the Langtang range.',
+      highlights: [
+        'Visit Kyanjin Gompa (3,870m)',
+        'Climb Kyanjin Ri (4,773m)',
+        'Experience Tamang culture',
+        'View stunning glaciers',
+        'Trek through rhododendron forests',
+        'Visit traditional villages',
+        'Optional climb to Tserko Ri (4,984m)'
+      ],
       image: 'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 1800,
-      season: 'Oct - Nov',
-      duration: '7-9 days',
+      duration: '7-10 Days',
       difficulty: 'Moderate',
-      altitude: '4,380m'
+      maxAltitude: '4,984m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Syabrubesi',
+      price: 1800
     },
     {
       id: 'upper-mustang',
-      category: 'TREK',
-      title: 'Upper Mustang',
-      description: 'Journey through the hidden kingdom of Lo, featuring dramatic landscapes and preserved Tibetan culture.',
+      title: 'Upper Mustang Trek',
+      subtitle: 'Journey through the hidden kingdom',
+      overview: 'Upper Mustang, the former Kingdom of Lo, is a restricted area that preserves one of the last vestiges of traditional Tibetan Buddhist culture. Trek through an arid landscape of colorful rock formations, ancient cave monasteries, and walled cities. This unique trek offers insights into a preserved medieval Tibetan kingdom.',
+      highlights: [
+        'Explore the walled city of Lo Manthang',
+        'Visit ancient Buddhist monasteries',
+        'Witness preserved Tibetan culture',
+        'See dramatic desert landscapes',
+        'Discover ancient cave dwellings',
+        'Experience traditional festivals',
+        'View the Annapurna and Dhaulagiri ranges'
+      ],
       image: 'https://images.unsplash.com/photo-1623207613517-afe2e80e5d6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 3500,
-      season: 'Jun - Sep',
-      duration: '12-14 days',
+      duration: '14-16 Days',
       difficulty: 'Moderate',
-      altitude: '3,840m'
+      maxAltitude: '3,840m',
+      bestSeason: 'Jun - Sep',
+      accommodation: 'Basic Teahouse/Lodge',
+      startEndPoint: 'Jomsom',
+      price: 3500
     },
     {
-      id: 'gokyo-lakes',
-      category: 'TREK',
-      title: 'Gokyo Lakes',
-      description: 'Trek to the world\'s highest freshwater lake system, offering spectacular views of four 8,000m peaks.',
+      id: 'gokyo-ri',
+      title: 'Gokyo Lakes Trek',
+      subtitle: 'Journey to the world\'s highest freshwater lake system',
+      overview: 'The Gokyo Lakes Trek takes you to the world\'s highest freshwater lake system, offering a spectacular alternative to the classic Everest Base Camp route. Witness the turquoise Gokyo Lakes, climb Gokyo Ri for panoramic views of four 8,000m peaks, and cross the massive Ngozumpa Glacier, the longest glacier in Nepal.',
+      highlights: [
+        'Visit the pristine Gokyo Lakes (4,700-5,000m)',
+        'Climb Gokyo Ri (5,357m)',
+        'Cross Ngozumpa Glacier',
+        'View four 8,000m peaks',
+        'Trek through Sherpa villages',
+        'Visit Tengboche Monastery',
+        'Experience unique mountain culture'
+      ],
       image: 'https://images.unsplash.com/photo-1515876305430-f06edab8282a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 2600,
-      season: 'Oct - Nov',
-      duration: '12-14 days',
-      difficulty: 'Moderate',
-      altitude: '5,357m'
+      duration: '12-14 Days',
+      difficulty: 'Moderate to Challenging',
+      maxAltitude: '5,357m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Lukla',
+      price: 2600
     },
     {
       id: 'khopra-ridge',
-      category: 'TREK',
       title: 'Khopra Ridge Trek',
-      description: 'A hidden gem offering panoramic views of the Annapurna and Dhaulagiri ranges.',
-      image: 'https://images.unsplash.com/photo-1570731617731-fb0aa4d9b9aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      price: 1800,
-      season: 'Oct - Nov',
-      duration: '8-10 days',
+      subtitle: 'Off-the-beaten-path Annapurna adventure',
+      overview: 'The Khopra Ridge Trek (also known as Khopra Danda) is a hidden gem in the Annapurna region, offering a less crowded alternative with spectacular views of the Annapurna and Dhaulagiri ranges. This trek combines traditional villages, pristine forests, and high alpine ridges with the opportunity to visit sacred Khayer Lake.',
+      highlights: [
+        'Panoramic views from Khopra Ridge',
+        'Visit sacred Khayer Lake (4,500m)',
+        'Authentic village experiences',
+        'Pristine rhododendron forests',
+        'Views of Annapurna South',
+        'Traditional Gurung culture',
+        'Less crowded trail experience'
+      ],
+      image: 'https://images.unsplash.com/photo-1623207613517-afe2e80e5d6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      duration: '8-10 Days',
       difficulty: 'Moderate',
-      altitude: '3,660m'
+      maxAltitude: '4,500m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Nayapul',
+      price: 1900
+    },
+    {
+      id: 'mardi-himal',
+      title: 'Mardi Himal Trek',
+      subtitle: 'Hidden gem in the Annapurna region',
+      overview: 'The Mardi Himal Trek is an off-the-beaten-path adventure that takes you to the base camp of Mardi Himal (5,587m), located east of the Annapurna Base Camp. This hidden gem offers stunning close-up views of Mardi Himal, Machapuchare (Fishtail), Annapurna South, and Hiunchuli. The trail winds through charming villages, rhododendron forests, and high alpine terrain.',
+      highlights: [
+        'Spectacular views of Machapuchare (Fishtail)',
+        'Less crowded alternative trek',
+        'Beautiful rhododendron forests',
+        'Traditional Gurung villages',
+        'High Camp sunrise views',
+        'Close-up mountain panoramas',
+        'Authentic local experiences'
+      ],
+      image: 'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      duration: '8-9 Days',
+      difficulty: 'Moderate',
+      maxAltitude: '4,500m (High Camp)',
+      bestSeason: 'Mar - May, Oct - Dec',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Pokhara',
+      price: 1200
+    },
+    {
+      id: 'pikey-peak',
+      title: 'Pikey Peak Trek',
+      subtitle: 'Best viewpoint of Mount Everest in Lower Khumbu',
+      overview: 'The Pikey Peak trek offers one of the finest viewpoints of Mount Everest and the Khumbu region without the crowds. Sir Edmund Hillary himself considered the view from Pikey Peak to be the best of Everest. This short but rewarding trek takes you through authentic Sherpa villages, ancient monasteries, and pristine forests while providing spectacular panoramic views of the Himalayan range.',
+      highlights: [
+        'Panoramic views of Everest and Khumbu range',
+        'Less crowded authentic experience',
+        'Rich Sherpa culture and monasteries',
+        'Beautiful rhododendron forests',
+        'Sunrise view from Pikey Peak',
+        'Traditional mountain villages',
+        'Short but rewarding trek'
+      ],
+      image: 'https://images.unsplash.com/photo-1623207613517-afe2e80e5d6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      duration: '5-7 Days',
+      difficulty: 'Moderate',
+      maxAltitude: '4,065m',
+      bestSeason: 'Mar - May, Oct - Nov',
+      accommodation: 'Teahouse/Lodge',
+      startEndPoint: 'Dhap',
+      price: 1100
     }
   ];
 
@@ -120,11 +254,11 @@ const TrekkingPage = () => {
           className="absolute inset-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+            src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
             alt="Nepal Mountains"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/30 bg-gradient-to-t from-black/70"></div>
         </motion.div>
 
         <div className="relative h-full flex flex-col justify-center items-center text-white px-4">
@@ -165,9 +299,7 @@ const TrekkingPage = () => {
       <div className="sticky top-0 bg-gray-900/95 backdrop-blur-sm z-40 py-6 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center">
-            <div
-              className="text-lg font-medium text-[#F28C38] border-b-2 border-[#F28C38]"
-            >
+            <div className="text-lg font-medium text-[#F28C38] border-b-2 border-[#F28C38]">
               TREKKING
             </div>
           </div>
@@ -186,76 +318,89 @@ const TrekkingPage = () => {
             breakpoints={{
               640: {
                 slidesPerView: 2,
+                spaceBetween: 20,
               },
               1024: {
                 slidesPerView: 3,
+                spaceBetween: 30,
               },
             }}
-            className="trek-swiper"
+            className="trek-swiper !pb-12"
           >
             {treks.map((trek) => (
-              <SwiperSlide key={trek.id}>
-                <Link to={`/trekking/${trek.id}`}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="bg-gray-800 rounded-lg overflow-hidden group h-full flex flex-col cursor-pointer hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="relative h-[250px] overflow-hidden">
+              <SwiperSlide key={trek.id} className="h-auto flex">
+                <Link to={`/trekking/${trek.id}`} className="block w-full">
+                  <div className="bg-gray-800 rounded-lg overflow-hidden h-[600px] flex flex-col">
+                    <div className="relative h-[200px] flex-shrink-0">
                       <img
                         src={trek.image}
                         alt={trek.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-[#F28C38] text-white px-3 py-1 rounded-full text-sm">
-                          {trek.category}
-                        </span>
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent"></div>
                     </div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-2xl font-bold text-white mb-2 line-clamp-1 group-hover:text-[#F28C38] transition-colors">{trek.title}</h3>
-                      <p className="text-gray-300 mb-4 flex-grow line-clamp-2">{trek.description}</p>
-                      
-                      {/* Trek Details */}
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="flex items-center text-gray-400">
-                          <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" />
-                          </svg>
-                          <span className="line-clamp-1">{trek.season}</span>
-                        </div>
-                        <div className="flex items-center text-gray-400">
-                          <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V5z" />
-                          </svg>
-                          <span className="line-clamp-1">{trek.duration}</span>
-                        </div>
-                        <div className="flex items-center text-gray-400">
-                          <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
-                          </svg>
-                          <span className="line-clamp-1">{trek.difficulty}</span>
-                        </div>
-                        <div className="flex items-center text-gray-400">
-                          <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zm-2.207 2.207L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                          </svg>
-                          <span className="line-clamp-1">{trek.altitude}</span>
+                    <div className="p-5 flex-1 flex flex-col">
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#F28C38] transition-colors">
+                          {trek.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-3">{trek.subtitle}</p>
+                        <p className="text-gray-300 mb-4 text-sm line-clamp-3">{trek.overview}</p>
+                        
+                        <div className="grid grid-cols-2 gap-3 mb-4">
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <svg className="w-4 h-4 text-[#F28C38] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="truncate">{trek.duration}</span>
+                          </div>
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <svg className="w-4 h-4 text-[#F28C38] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                            </svg>
+                            <span className="truncate">{trek.maxAltitude}</span>
+                          </div>
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <svg className="w-4 h-4 text-[#F28C38] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                            <span className="truncate">{trek.difficulty}</span>
+                          </div>
+                          <div className="flex items-center text-gray-300 text-sm">
+                            <svg className="w-4 h-4 text-[#F28C38] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="truncate">{trek.bestSeason}</span>
+                          </div>
                         </div>
                       </div>
 
-                      <div className="flex justify-between items-center mt-auto">
-                        <div className="text-[#F28C38] font-bold text-xl">
-                          USD ${trek.price}
+                      <div className="mt-auto">
+                        <div className="border-t border-gray-700 pt-3">
+                          <h4 className="text-base font-semibold text-white mb-2">Highlights</h4>
+                          <ul className="text-gray-300 text-sm space-y-1.5">
+                            {trek.highlights.slice(0, 3).map((highlight, index) => (
+                              <li key={index} className="flex items-center">
+                                <svg className="w-3.5 h-3.5 text-[#F28C38] mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span className="line-clamp-1">{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <span className="bg-[#F28C38] text-white px-6 py-2 rounded-full group-hover:bg-[#E67D29] transition duration-300">
-                          Learn More
-                        </span>
+
+                        <div className="flex justify-between items-center mt-4">
+                          <span className="text-xl font-bold text-white">
+                            ${trek.price}
+                          </span>
+                          <button className="bg-[#F28C38] text-white px-4 py-1.5 rounded-lg hover:bg-[#E67D29] transition duration-300 text-sm">
+                            View Details
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </Link>
               </SwiperSlide>
             ))}
@@ -266,4 +411,4 @@ const TrekkingPage = () => {
   );
 };
 
-export default TrekkingPage; 
+export default TrekkingPage;

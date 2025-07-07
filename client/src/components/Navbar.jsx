@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTrekContext } from '../context/TrekContext';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { scrollToTrek } = useTrekContext();
+  const navigate = useNavigate();
+
+  const handleTrekClick = (trekId) => {
+    navigate(`/trekking/${trekId}`);
+    setActiveDropdown(null); // Close the dropdown after clicking
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -138,13 +146,13 @@ export default function Navbar() {
                                 FEATURED TREKS
                               </h3>
                               {item.dropdown.map((dropdownItem) => (
-                                <Link
+                                <div
                                   key={dropdownItem.name}
-                                  to={dropdownItem.path}
-                                  className="block py-3 text-base text-white hover:bg-[#F28C38]/20 hover:text-[#F28C38] px-4 rounded-md transition-all duration-200"
+                                  onClick={() => handleTrekClick(dropdownItem.path.split('/')[2])}
+                                  className="block py-3 text-base text-white hover:bg-[#F28C38]/20 hover:text-[#F28C38] px-4 rounded-md transition-all duration-200 cursor-pointer"
                                 >
                                   {dropdownItem.name}
-                                </Link>
+                                </div>
                               ))}
                               <Link
                                 to="/trekking"
@@ -158,7 +166,10 @@ export default function Navbar() {
                             <div className="col-span-4">
                               <div className="grid grid-cols-3 gap-8">
                                 {/* Featured Trek 1 */}
-                                <div className="group">
+                                <div 
+                                  className="group cursor-pointer" 
+                                  onClick={() => handleTrekClick('everest-base-camp')}
+                                >
                                   <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                     <img 
                                       src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
@@ -169,7 +180,10 @@ export default function Navbar() {
                                   <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Everest Base Camp Trek</h3>
                                 </div>
                                 {/* Featured Trek 2 */}
-                                <div className="group">
+                                <div 
+                                  className="group cursor-pointer" 
+                                  onClick={() => handleTrekClick('annapurna-base-camp')}
+                                >
                                   <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                     <img 
                                       src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
@@ -180,7 +194,10 @@ export default function Navbar() {
                                   <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Annapurna Base Camp</h3>
                                 </div>
                                 {/* Featured Trek 3 */}
-                                <div className="group">
+                                <div 
+                                  className="group cursor-pointer" 
+                                  onClick={() => handleTrekClick('manaslu-circuit')}
+                                >
                                   <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                     <img 
                                       src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
@@ -268,7 +285,7 @@ export default function Navbar() {
                                 className="block mt-4 py-2 text-xs font-medium text-[#F28C38] hover:text-white transition-colors px-4"
                               >
                                 ALL EXPEDITIONS →
-              </Link>
+                              </Link>
                             </div>
                             
                             {/* Right side - Featured content */}

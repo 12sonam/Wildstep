@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
+import { TrekProvider } from './context/TrekContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -27,33 +28,35 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/expeditions" element={<Expeditions />} />
-          <Route path="/expeditions/:id" element={<ExpeditionDetail />} />
-          <Route path="/trekking" element={<Trekking />} />
-          <Route path="/trekking/:id" element={<TrekkingDetail />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/admin/login"
-            element={<Login setIsAuthenticated={setIsAuthenticated} />}
-          />
-          <Route
-            path="/admin/*"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <TrekProvider>
+      <div className="min-h-screen flex flex-col">
+        <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/expeditions" element={<Expeditions />} />
+            <Route path="/expeditions/:id" element={<ExpeditionDetail />} />
+            <Route path="/trekking" element={<Trekking />} />
+            <Route path="/trekking/:id" element={<TrekkingDetail />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/admin/login"
+              element={<Login setIsAuthenticated={setIsAuthenticated} />}
+            />
+            <Route
+              path="/admin/*"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </TrekProvider>
   );
 }
 
