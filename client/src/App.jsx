@@ -28,8 +28,8 @@ function App() {
   };
 
   return (
-    <TrekProvider>
-      <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
+      <TrekProvider>
         <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
         <main className="flex-grow">
           <Routes>
@@ -55,8 +55,8 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </div>
-    </TrekProvider>
+      </TrekProvider>
+    </div>
   );
 }
 

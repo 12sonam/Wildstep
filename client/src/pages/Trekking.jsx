@@ -274,6 +274,27 @@ const TrekkingPage = () => {
             <p className="text-xl sm:text-2xl text-gray-300">
               From classic routes to hidden gems, explore the world's most spectacular mountain trails
             </p>
+            <Link
+              to="/contact"
+              className="mt-8 group inline-flex items-center gap-2 rounded-full px-6 py-3 text-white transition-all duration-300 hover:bg-[#F28C38]"
+            >
+              <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white/30 group-hover:border-white group-hover:bg-[#F28C38] transition-colors">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+              <span className="text-lg font-medium">Enquire now</span>
+            </Link>
           </motion.div>
         </div>
 

@@ -1,245 +1,343 @@
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { motion } from 'framer-motion';
+import { useExpeditionContext } from '../context/TrekContext';
 
-export default function ExpeditionDetail() {
+const ExpeditionDetail = () => {
   const { id } = useParams();
-  const [expedition, setExpedition] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { expeditions } = useExpeditionContext();
+  const expedition = expeditions.find(exp => exp.id === id);
   const [activeTab, setActiveTab] = useState('overview');
-  const [bookingForm, setBookingForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
 
-  useEffect(() => {
-    const fetchExpedition = async () => {
-      try {
-        const { data } = await axios.get(`/api/expeditions/${id}`);
-        setExpedition(data);
-        setLoading(false);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
-
-    fetchExpedition();
-  }, [id]);
-
-  const handleBookingSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post('/api/contact', {
-        ...bookingForm,
-        subject: `Booking Inquiry: ${expedition.title}`,
-      });
-      alert('Thank you for your interest! We will contact you soon.');
-      setBookingForm({ name: '', email: '', phone: '', message: '' });
-    } catch (err) {
-      alert('Error submitting form. Please try again.');
-    }
-  };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-600"></div>
-      </div>
-    );
+  if (!expedition) {
+    return <div>Expedition not found</div>;
   }
 
-  if (error || !expedition) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-red-600">Error: {error || 'Expedition not found'}</div>
-      </div>
-    );
-  }
+  const tabs = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'itinerary', label: 'Itinerary' },
+    { id: 'requirements', label: 'Requirements' },
+    { id: 'training', label: 'Training' },
+    { id: 'services', label: 'Services' }
+  ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen bg-[#1C2632]">
       {/* Hero Section */}
-      <div className="relative h-96 rounded-xl overflow-hidden mb-8">
-        <img
+      <div className="relative h-[60vh] overflow-hidden">
+        <motion.img
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
           src={expedition.image}
-          alt={expedition.title}
+          alt={expedition.name}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-8">
-          <h1 className="text-4xl font-bold text-white mb-4">{expedition.title}</h1>
-          <div className="flex flex-wrap gap-4 text-white">
-            <span className="bg-primary-600 px-3 py-1 rounded-full text-sm">
-              {expedition.difficulty}
-            </span>
-            <span className="bg-primary-600 px-3 py-1 rounded-full text-sm">
-              {expedition.duration}
-            </span>
-            <span className="bg-primary-600 px-3 py-1 rounded-full text-sm">
-              {expedition.altitude}
-            </span>
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1C2632] via-[#1C2632]/50 to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-center"
+          >
+            <h1 className="text-5xl font-bold text-white mb-4">{expedition.name}</h1>
+            <div className="flex items-center justify-center gap-4 text-white">
+              <span className="bg-orange-500/20 border border-orange-500/30 px-4 py-2 rounded-lg">
+                {expedition.altitude}m
+              </span>
+              <span className="bg-orange-500/20 border border-orange-500/30 px-4 py-2 rounded-lg">
+                {expedition.duration} Days
+              </span>
+              <span className="bg-orange-500/20 border border-orange-500/30 px-4 py-2 rounded-lg">
+                {expedition.grade}
+              </span>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Content Tabs */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <div className="mb-6 border-b border-gray-200">
-            <nav className="flex space-x-8">
-              {['overview', 'itinerary', 'includes', 'gear'].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === tab
-                      ? 'border-primary-600 text-primary-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </nav>
-          </div>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Quick Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+          {[
+            { label: 'Success Rate', value: expedition.success_rate },
+            { label: 'Group Size', value: expedition.group_size },
+            { label: 'Guide Ratio', value: expedition.guide_ratio },
+            { label: 'Base Camp', value: expedition.base_camp_alt }
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-gray-800/50 rounded-lg p-6 border border-gray-700"
+            >
+              <div className="text-gray-400 text-sm mb-2">{stat.label}</div>
+              <div className="text-2xl font-bold text-white">{stat.value}</div>
+            </motion.div>
+          ))}
+        </div>
 
-          <div className="prose max-w-none">
+        {/* Tabs Navigation */}
+        <div className="border-b border-gray-700 mb-8">
+          <div className="flex gap-8 overflow-x-auto">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`py-4 px-2 text-sm font-medium transition-colors relative ${
+                  activeTab === tab.id
+                    ? 'text-orange-500'
+                    : 'text-gray-400 hover:text-gray-300'
+                }`}
+              >
+                {tab.label}
+                {activeTab === tab.id && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-500"
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Tab Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content Area */}
+          <div className="lg:col-span-2 space-y-8">
             {activeTab === 'overview' && (
-              <div>
-                <p className="text-gray-600">{expedition.description}</p>
-                <h3 className="text-xl font-semibold mt-6 mb-4">Highlights</h3>
-                <ul className="list-disc pl-5 space-y-2">
-                  {expedition.highlights.map((highlight, index) => (
-                    <li key={index}>{highlight}</li>
-                  ))}
-                </ul>
-              </div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="space-y-8"
+              >
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-lg text-gray-300">{expedition.description}</p>
+                </div>
+
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-white mb-4">Highlights</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {expedition.highlights.map((highlight, index) => (
+                      <li key={index} className="flex items-start gap-3 text-gray-300">
+                        <span className="text-orange-500 mt-1">•</span>
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-white mb-4">Weather Conditions</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <div className="text-sm text-gray-400 mb-1">Temperature Range</div>
+                      <div className="text-white">{expedition.weather_conditions.temperature_range}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-400 mb-1">Wind Speeds</div>
+                      <div className="text-white">{expedition.weather_conditions.wind_speeds}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-400 mb-1">Precipitation</div>
+                      <div className="text-white">{expedition.weather_conditions.precipitation}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-400 mb-1">Best Weather Window</div>
+                      <div className="text-white">{expedition.weather_conditions.best_weather_window}</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             )}
 
             {activeTab === 'itinerary' && (
-              <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="space-y-6"
+              >
                 {expedition.itinerary.map((day, index) => (
-                  <div key={index} className="border-l-4 border-primary-600 pl-4">
-                    <h3 className="font-semibold">Day {day.day}: {day.title}</h3>
-                    <p className="text-gray-600">{day.description}</p>
-                    <div className="text-sm text-gray-500 mt-2">
-                      <span className="mr-4">Altitude: {day.altitude}</span>
-                      <span>Accommodation: {day.accommodation}</span>
+                  <div
+                    key={index}
+                    className="bg-gray-800/50 rounded-lg p-6 border border-gray-700"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="bg-orange-500/20 text-orange-500 px-3 py-1 rounded text-sm font-medium">
+                        Day {day.day}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-medium text-white mb-2">{day.title}</h4>
+                        <p className="text-gray-300 mb-4">{day.description}</p>
+                        <div className="grid grid-cols-3 gap-4 text-sm">
+                          <div>
+                            <div className="text-gray-400">Altitude</div>
+                            <div className="text-white">{day.altitude}</div>
+                          </div>
+                          <div>
+                            <div className="text-gray-400">Accommodation</div>
+                            <div className="text-white">{day.accommodation}</div>
+                          </div>
+                          <div>
+                            <div className="text-gray-400">Meals</div>
+                            <div className="text-white">{day.meals}</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
-              </div>
+              </motion.div>
             )}
 
-            {activeTab === 'includes' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Included</h3>
-                  <ul className="space-y-2">
-                    {expedition.includes.map((item, index) => (
-                      <li key={index} className="flex items-center text-gray-600">
-                        <svg className="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
+            {activeTab === 'requirements' && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="space-y-8"
+              >
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-white mb-4">Required Experience</h3>
+                  <ul className="space-y-3">
+                    {expedition.required_experience.map((req, index) => (
+                      <li key={index} className="flex items-start gap-3 text-gray-300">
+                        <span className="text-orange-500 mt-1">•</span>
+                        {req}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Not Included</h3>
-                  <ul className="space-y-2">
-                    {expedition.excludes.map((item, index) => (
-                      <li key={index} className="flex items-center text-gray-600">
-                        <svg className="h-5 w-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                        {item}
+
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-white mb-4">Ratings</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <div className="text-sm text-gray-400 mb-2">Physical Difficulty</div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <span
+                            key={i}
+                            className={`w-8 h-2 rounded ${
+                              i < expedition.physical_rating
+                                ? 'bg-orange-500'
+                                : 'bg-gray-600'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-400 mb-2">Technical Difficulty</div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <span
+                            key={i}
+                            className={`w-8 h-2 rounded ${
+                              i < expedition.technical_rating
+                                ? 'bg-orange-500'
+                                : 'bg-gray-600'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'training' && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="space-y-6"
+              >
+                {expedition.training_camps.map((camp, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-800/50 rounded-lg p-6 border border-gray-700"
+                  >
+                    <h4 className="text-lg font-medium text-white mb-4">{camp.location}</h4>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <div className="text-gray-400">Duration</div>
+                        <div className="text-white">{camp.duration}</div>
+                      </div>
+                      <div>
+                        <div className="text-gray-400">Focus</div>
+                        <div className="text-white">{camp.focus}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === 'services' && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="space-y-8"
+              >
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold text-white mb-4">Included Services</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {expedition.included_services.map((service, index) => (
+                      <li key={index} className="flex items-start gap-3 text-gray-300">
+                        <span className="text-orange-500 mt-1">•</span>
+                        {service}
                       </li>
                     ))}
                   </ul>
                 </div>
-              </div>
-            )}
-
-            {activeTab === 'gear' && (
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Required Gear</h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {expedition.requiredGear.map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-600">
-                      <svg className="h-5 w-5 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </motion.div>
             )}
           </div>
-        </div>
 
-        {/* Booking Form */}
-        <div className="lg:col-span-1">
-          <div className="bg-gray-50 rounded-lg p-6 sticky top-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              ${expedition.price.toLocaleString()}
-            </h3>
-            <form onSubmit={handleBookingSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Name</label>
-                <input
-                  type="text"
-                  required
-                  value={bookingForm.name}
-                  onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                />
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-8 space-y-6">
+              <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                <div className="text-sm text-gray-400 mb-2">Price per person from</div>
+                <div className="text-3xl font-bold text-white mb-4">
+                  USD ${expedition.price.toLocaleString()}
+                </div>
+                <button className="w-full bg-orange-500 text-white py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors">
+                  Book Now
+                </button>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
-                <input
-                  type="email"
-                  required
-                  value={bookingForm.email}
-                  onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                />
+
+              <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                <h3 className="text-lg font-medium text-white mb-4">Key Information</h3>
+                <div className="space-y-4">
+                  <div>
+                    <div className="text-sm text-gray-400">Season</div>
+                    <div className="text-white">{expedition.season}</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">Duration</div>
+                    <div className="text-white">{expedition.duration} days</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">Dates</div>
+                    <div className="text-white">{expedition.dates}</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">Difficulty</div>
+                    <div className="text-white">{expedition.difficulty}</div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Phone</label>
-                <input
-                  type="tel"
-                  value={bookingForm.phone}
-                  onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Message</label>
-                <textarea
-                  rows={4}
-                  value={bookingForm.message}
-                  onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-primary-600 text-white py-3 px-4 rounded-md hover:bg-primary-700 transition-colors"
-              >
-                Request Booking
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-} 
+};
+
+export default ExpeditionDetail; 

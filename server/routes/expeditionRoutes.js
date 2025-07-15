@@ -6,11 +6,6 @@ import { authenticateToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
-// Expedition routes will be implemented here
-router.get('/', (req, res) => {
-  res.json({ message: 'Expedition routes working' });
-});
-
 // @desc    Fetch all expeditions
 // @route   GET /api/expeditions
 // @access  Public

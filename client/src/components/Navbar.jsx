@@ -10,9 +10,14 @@ export default function Navbar() {
   const { scrollToTrek } = useTrekContext();
   const navigate = useNavigate();
 
+  const handleExpeditionClick = (expeditionPath) => {
+    navigate(expeditionPath);
+    setActiveDropdown(null);
+  };
+
   const handleTrekClick = (trekId) => {
     navigate(`/trekking/${trekId}`);
-    setActiveDropdown(null); // Close the dropdown after clicking
+    setActiveDropdown(null);
   };
 
   useEffect(() => {
@@ -34,15 +39,21 @@ export default function Navbar() {
       dropdown: [
         { 
           name: 'Mount Everest Expedition',
-          path: '/expeditions/everest'
+          path: '/expeditions/everest',
+          height: '8848M',
+          image: 'https://images.unsplash.com/photo-1486911278844-a81c5267e227?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
         },
         {
           name: 'Ama Dablam Expedition',
-          path: '/expeditions/ama-dablam'
+          path: '/expeditions/ama-dablam',
+          height: '6812M',
+          image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
         },
         {
           name: 'Cho Oyu Expedition',
-          path: '/expeditions/cho-oyu'
+          path: '/expeditions/cho-oyu',
+          height: '8188M',
+          image: 'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
         }
       ]
     },
@@ -138,7 +149,79 @@ export default function Navbar() {
                       style={{ top: isScrolled ? '64px' : '76px' }}
                     >
                       <div className="max-w-7xl mx-auto px-8 py-8">
-                        {item.name === 'TREKKING' ? (
+                        {item.name === 'EXPEDITIONS' ? (
+                          <div className="grid grid-cols-5 gap-8">
+                            {/* Left side - Menu items */}
+                            <div className="col-span-1 border-r border-gray-700/50">
+                              <h3 className="text-[#F28C38] font-semibold mb-4 text-sm uppercase tracking-wider">
+                                FEATURED EXPEDITIONS
+                              </h3>
+                              {item.dropdown.map((dropdownItem) => (
+                                <div
+                                  key={dropdownItem.name}
+                                  onClick={() => handleExpeditionClick(dropdownItem.path)}
+                                  className="block py-3 text-base text-white hover:bg-[#F28C38]/20 hover:text-[#F28C38] px-4 rounded-md transition-all duration-200 cursor-pointer"
+                                >
+                                  {dropdownItem.name}
+                                </div>
+                              ))}
+                              <Link
+                                to="/expeditions"
+                                className="block mt-4 py-2 text-xs font-medium text-[#F28C38] hover:text-white transition-colors px-4"
+                              >
+                                ALL EXPEDITIONS →
+                              </Link>
+                            </div>
+                            
+                            {/* Right side - Featured content */}
+                            <div className="col-span-4">
+                              <div className="grid grid-cols-3 gap-8">
+                                {/* Featured Expedition 1 */}
+                                <div 
+                                  className="group cursor-pointer" 
+                                  onClick={() => handleExpeditionClick('/expeditions/everest')}
+                                >
+                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                    <img 
+                                      src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+                                      alt="Mount Everest Expedition"
+                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  </div>
+                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Mount Everest Expedition</h3>
+                                </div>
+                                {/* Featured Expedition 2 */}
+                                <div 
+                                  className="group cursor-pointer" 
+                                  onClick={() => handleExpeditionClick('/expeditions/ama-dablam')}
+                                >
+                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                    <img 
+                                      src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+                                      alt="Ama Dablam Expedition"
+                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  </div>
+                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Ama Dablam Expedition</h3>
+                                </div>
+                                {/* Featured Expedition 3 */}
+                                <div 
+                                  className="group cursor-pointer" 
+                                  onClick={() => handleExpeditionClick('/expeditions/cho-oyu')}
+                                >
+                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                    <img 
+                                      src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+                                      alt="Cho Oyu Expedition"
+                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  </div>
+                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Cho Oyu Expedition</h3>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ) : item.name === 'TREKKING' ? (
                           <div className="grid grid-cols-5 gap-8">
                             {/* Left side - Menu items */}
                             <div className="col-span-1 border-r border-gray-700/50">
@@ -265,67 +348,16 @@ export default function Navbar() {
                             </div>
                           </div>
                         ) : (
-                          <div className="grid grid-cols-5 gap-8">
-                            {/* Left side - Menu items */}
-                            <div className="col-span-1 border-r border-gray-700/50">
-                              <h3 className="text-[#F28C38] font-semibold mb-4 text-sm uppercase tracking-wider">
-                                FEATURED EXPEDITIONS
-                              </h3>
-                              {item.dropdown.map((dropdownItem) => (
-                                <Link
-                                  key={dropdownItem.name}
-                                  to={dropdownItem.path}
-                                  className="block py-3 text-base text-white hover:bg-[#F28C38]/20 hover:text-[#F28C38] px-4 rounded-md transition-all duration-200"
-                                >
-                                  {dropdownItem.name}
-                                </Link>
-                              ))}
+                          <div className="py-2">
+                            {item.dropdown?.map((dropdownItem) => (
                               <Link
-                                to="/expeditions"
-                                className="block mt-4 py-2 text-xs font-medium text-[#F28C38] hover:text-white transition-colors px-4"
+                                key={dropdownItem.name}
+                                to={dropdownItem.path}
+                                className="block px-4 py-2 text-base text-white hover:text-[#F28C38] transition-colors"
                               >
-                                ALL EXPEDITIONS →
+                                {dropdownItem.name}
                               </Link>
-                            </div>
-                            
-                            {/* Right side - Featured content */}
-                            <div className="col-span-4">
-                              <div className="grid grid-cols-3 gap-8">
-                                {/* Featured Expedition 1 */}
-                                <div className="group">
-                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                                    <img 
-                                      src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                                      alt="Mount Everest Expedition"
-                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                  </div>
-                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Mount Everest Expedition</h3>
-                                </div>
-                                {/* Featured Expedition 2 */}
-                                <div className="group">
-                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                                    <img 
-                                      src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                                      alt="Ama Dablam Expedition"
-                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                  </div>
-                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Ama Dablam Expedition</h3>
-                                </div>
-                                {/* Featured Expedition 3 */}
-                                <div className="group">
-                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                                    <img 
-                                      src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                                      alt="Cho Oyu Expedition"
-                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                  </div>
-                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Cho Oyu Expedition</h3>
-                                </div>
-                              </div>
-                            </div>
+                            ))}
                           </div>
                         )}
                       </div>
@@ -340,95 +372,59 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white p-2"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#F28C38] focus:outline-none"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMobileMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              <span className="sr-only">Open main menu</span>
+              {isMobileMenuOpen ? (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile menu */}
-        <AnimatePresence>
+      {/* Mobile menu */}
+      <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden mt-4"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-black/95"
           >
-              <div className="flex flex-col space-y-2 pb-4">
-                {navItems.map((item) => (
-                  <div key={item.name} className="space-y-2">
-                    <Link
-                      to={item.path}
-                      className="block text-white hover:text-[#F28C38] transition-colors text-sm uppercase tracking-wider font-medium"
-                      onClick={() => {
-                        if (!item.dropdown) setIsMobileMenuOpen(false);
-                        setActiveDropdown(activeDropdown === item.name ? null : item.name);
-                      }}
-                    >
-                      {item.name}
-                      {item.dropdown && (
-                        <span className="float-right">{activeDropdown === item.name ? '−' : '+'}</span>
-                      )}
-                    </Link>
-                    {item.dropdown && activeDropdown === item.name && (
-                      <div className="pl-4 space-y-2">
-                        {item.dropdown.map((dropdownItem) => (
-                          <div key={dropdownItem.name}>
-                            <Link
-                              to={dropdownItem.path}
-                              className="block text-gray-300 hover:text-[#F28C38] text-sm"
-                              onClick={() => {
-                                if (!dropdownItem.subItems) setIsMobileMenuOpen(false);
-                                setActiveDropdown(activeDropdown === dropdownItem.name ? null : dropdownItem.name);
-                              }}
-                            >
-                              {dropdownItem.name}
-                              {dropdownItem.subItems && (
-                                <span className="float-right">{activeDropdown === dropdownItem.name ? '−' : '+'}</span>
-                              )}
-                            </Link>
-                            {dropdownItem.subItems && activeDropdown === dropdownItem.name && (
-                              <div className="pl-4 space-y-2 mt-2">
-                                {dropdownItem.subItems.map((subItem) => (
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navItems.map((item) => (
                 <Link
-                                    key={subItem.name}
-                                    to={subItem.path}
-                                    className="block text-gray-400 hover:text-[#F28C38] text-sm"
+                  key={item.name}
+                  to={item.path}
+                  className="block px-3 py-2 text-base font-medium text-white hover:text-[#F28C38] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                                    {subItem.name}
+                  {item.name}
                 </Link>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
               ))}
             </div>
           </motion.div>
         )}
-        </AnimatePresence>
-      </div>
+      </AnimatePresence>
     </nav>
   );
 }
