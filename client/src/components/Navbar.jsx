@@ -95,7 +95,30 @@ export default function Navbar() {
     },
     {
       name: 'ENQUIRE',
-      path: '/enquire',
+      path: '/enquire/general',
+      dropdown: [
+        { 
+          name: 'General Enquiry',
+          onClick: () => {
+            navigate('/enquire/general');
+            setActiveDropdown(null);
+          }
+        },
+        {
+          name: 'Exped Enquiry',
+          onClick: () => {
+            navigate('/enquire/expedition');
+            setActiveDropdown(null);
+          }
+        },
+        {
+          name: 'Virtual Call',
+          onClick: () => {
+            navigate('/enquire/virtual-call');
+            setActiveDropdown(null);
+          }
+        }
+      ]
     },
   ];
 
@@ -347,6 +370,68 @@ export default function Navbar() {
                               </div>
                             </div>
                           </div>
+                        ) : item.name === 'ENQUIRE' ? (
+                          <div className="grid grid-cols-5 gap-8">
+                            {/* Left side - Menu items */}
+                            <div className="col-span-1 border-r border-gray-700/50">
+                              <h3 className="text-[#F28C38] font-semibold mb-4 text-sm uppercase tracking-wider">
+                                GET IN TOUCH
+                              </h3>
+                              {item.dropdown.map((dropdownItem) => (
+                                <button
+                                  key={dropdownItem.name}
+                                  onClick={() => {
+                                    dropdownItem.onClick();
+                                    setActiveDropdown(null);
+                                  }}
+                                  className="block w-full text-left py-3 text-base text-white hover:bg-[#F28C38]/20 hover:text-[#F28C38] px-4 rounded-md transition-all duration-200 cursor-pointer"
+                                >
+                                  {dropdownItem.name}
+                                </button>
+                              ))}
+                            </div>
+                            
+                            {/* Right side - Images */}
+                            <div className="col-span-4">
+                              <div className="grid grid-cols-3 gap-8">
+                                {/* Image 1 */}
+                                <div className="group cursor-pointer overflow-hidden rounded-lg">
+                                  <div className="aspect-w-16 aspect-h-9">
+                                    <img 
+                                      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+                                      alt="Mountain Peak"
+                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  </div>
+                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                                </div>
+
+                                {/* Image 2 */}
+                                <div className="group cursor-pointer overflow-hidden rounded-lg">
+                                  <div className="aspect-w-16 aspect-h-9">
+                                    <img 
+                                      src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+                                      alt="Mountain Expedition"
+                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  </div>
+                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                                </div>
+
+                                {/* Image 3 */}
+                                <div className="group cursor-pointer overflow-hidden rounded-lg">
+                                  <div className="aspect-w-16 aspect-h-9">
+                                    <img 
+                                      src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+                                      alt="Mountain View"
+                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  </div>
+                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         ) : (
                           <div className="py-2">
                             {item.dropdown?.map((dropdownItem) => (
@@ -412,14 +497,41 @@ export default function Navbar() {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className="block px-3 py-2 text-base font-medium text-white hover:text-[#F28C38] transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                <React.Fragment key={item.name}>
+                  {item.dropdown ? (
+                    <>
+                      <div className="px-3 py-2 text-base font-medium text-white">
+                        {item.name}
+                      </div>
+                      <div className="pl-6 space-y-1">
+                        {item.dropdown.map((dropdownItem) => (
+                          <div
+                            key={dropdownItem.name}
+                            className="block px-3 py-2 text-sm text-gray-300 hover:text-[#F28C38] transition-colors cursor-pointer"
+                            onClick={() => {
+                              if (dropdownItem.onClick) {
+                                dropdownItem.onClick();
+                              } else if (dropdownItem.path) {
+                                navigate(dropdownItem.path);
+                              }
+                              setIsMobileMenuOpen(false);
+                            }}
+                          >
+                            {dropdownItem.name}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      className="block px-3 py-2 text-base font-medium text-white hover:text-[#F28C38] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           </motion.div>

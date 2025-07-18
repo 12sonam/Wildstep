@@ -147,7 +147,7 @@ const treksData = {
       'Reach Annapurna Base Camp (4,130m)',
       'Sunrise over the Annapurna massif',
       'Trek through diverse ecosystems',
-      'Experience Gurung culture and villages',
+      'Experience Gurung culture',
       'Relax in Jhinu Danda hot springs',
       'Views of Machapuchare (Fish Tail)',
       'Explore traditional mountain villages'
@@ -157,7 +157,7 @@ const treksData = {
     maxAltitude: '4,130m',
     bestSeason: 'Mar - May, Oct - Nov',
     accommodation: 'Teahouse',
-    startEndPoint: 'Pokhara',
+    startEndPoint: 'Nayapul/Pokhara',
     itinerary: [
       {
         day: 'Day 1',
@@ -177,7 +177,7 @@ const treksData = {
       {
         day: 'Day 4',
         title: 'Trek to Ghorepani (2,860m)',
-        description: 'Challenging ascent through rhododendron forests to the large Gurung village of Ghorepani.'
+        description: 'Challenging ascent through rhododendron forests to the large Gurung village.'
       },
       {
         day: 'Day 5',
@@ -197,7 +197,7 @@ const treksData = {
       {
         day: 'Day 8',
         title: 'Trek to Machhapuchhre Base Camp (3,700m)',
-        description: 'Climb through bamboo and rhododendron forests to MBC with stunning mountain views.'
+        description: 'Climb through bamboo and rhododendron forests to MBC.'
       },
       {
         day: 'Day 9',
@@ -212,22 +212,12 @@ const treksData = {
       {
         day: 'Day 11',
         title: 'Trek to Jhinu Danda (1,780m)',
-        description: 'Trek to Jhinu Danda, known for its natural hot springs.'
+        description: 'Trek to Jhinu Danda and enjoy natural hot springs.'
       },
       {
         day: 'Day 12',
         title: 'Trek to Nayapul and drive to Pokhara',
         description: 'Final day of trekking and return to Pokhara.'
-      },
-      {
-        day: 'Day 13',
-        title: 'Drive to Kathmandu',
-        description: 'Return to Kathmandu by tourist bus or flight.'
-      },
-      {
-        day: 'Day 14',
-        title: 'Departure Day',
-        description: 'Transfer to airport for your departure flight.'
       }
     ],
     included: [
@@ -251,25 +241,25 @@ const treksData = {
     ],
     faqs: [
       {
-        question: 'How difficult is the Annapurna Base Camp Trek?',
-        answer: 'The trek is considered moderate in difficulty. While it reaches a significant altitude, the daily elevation gains are gradual, and the trail is well-maintained with plenty of teahouses along the way.'
+        question: 'How difficult is the trek?',
+        answer: 'The trek is considered moderate in difficulty. While it involves some steep ascents and descents, the maximum altitude is lower than many other treks in Nepal, making it more accessible.'
       },
       {
-        question: 'When is the best time to trek?',
-        answer: 'Spring (March-May) and autumn (October-November) are ideal, offering stable weather and clear mountain views. Spring adds the bonus of rhododendron blooms.'
+        question: 'What makes ABC special?',
+        answer: 'The Annapurna Base Camp trek is unique because it takes you into a natural amphitheater surrounded by peaks over 7,000m. The close-up views of the mountains and the diversity of landscapes make it a truly special experience.'
       },
       {
-        question: 'Do I need trekking experience?',
-        answer: 'While previous trekking experience is helpful, it\'s not mandatory. Good physical fitness and proper acclimatization are more important. The trek is suitable for first-time trekkers who are reasonably fit.'
+        question: 'Are the hot springs worth visiting?',
+        answer: 'The natural hot springs at Jhinu Danda are a highlight for many trekkers. After days of trekking, the warm mineral waters offer perfect relaxation for tired muscles.'
       },
       {
-        question: 'What makes ABC trek special?',
-        answer: 'The ABC trek offers a unique combination of cultural experiences, diverse landscapes, and close-up views of the entire Annapurna range. The trek enters a natural amphitheater surrounded by peaks, offering a 360-degree mountain panorama.'
+        question: 'What about accommodation?',
+        answer: 'The trek features comfortable teahouse accommodation throughout the route. While basic, the teahouses offer clean rooms, good food, and sometimes even hot showers and Wi-Fi.'
       }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
       'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
       'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
       'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
     ]
@@ -277,102 +267,102 @@ const treksData = {
   'manaslu-circuit': {
     title: 'Manaslu Circuit Trek',
     subtitle: 'Adventure around the eighth highest mountain',
-    overview: 'The Manaslu Circuit Trek is a spectacular journey around Mount Manaslu (8,163m), the eighth highest mountain in the world. This restricted area trek offers pristine mountain views, rich Buddhist culture, and a challenging pass crossing. Experience the beauty of a less-traveled route that combines the best of Nepal\'s natural and cultural heritage.',
+    overview: 'The Manaslu Circuit Trek is a spectacular journey around Mount Manaslu (8,163m), the eighth highest mountain in the world. This remote trek offers a perfect blend of cultural immersion and dramatic landscapes, from subtropical forests to high-altitude passes, while experiencing both Hindu and Tibetan Buddhist cultures.',
     highlights: [
-      'Cross the challenging Larkya La Pass (5,160m)',
-      'Circuit around Mt. Manaslu (8,163m)',
-      'Experience authentic Tibetan culture',
+      'Cross Larkya La Pass (5,160m)',
+      'Views of Mt. Manaslu (8,163m)',
+      'Experience Tibetan culture',
+      'Visit ancient monasteries',
       'Trek through remote villages',
-      'Visit ancient Buddhist monasteries',
       'Diverse landscapes and ecosystems',
-      'Less crowded alternative to popular treks'
+      'Less crowded than other treks'
     ],
-    duration: '14-16 Days',
+    duration: '16-18 Days',
     difficulty: 'Challenging',
     maxAltitude: '5,160m',
-    bestSeason: 'Mar - May, Oct - Nov',
+    bestSeason: 'Mar - May, Sep - Nov',
     accommodation: 'Teahouse/Lodge',
-    startEndPoint: 'Soti Khola',
+    startEndPoint: 'Soti Khola/Besisahar',
     itinerary: [
       {
         day: 'Day 1',
-        title: 'Arrival in Kathmandu (1,400m)',
-        description: 'Welcome to Nepal! Airport pickup and transfer to your hotel in Kathmandu.'
-      },
-      {
-        day: 'Day 2',
         title: 'Drive to Soti Khola (710m)',
         description: 'Long but scenic drive through rural Nepal to reach Soti Khola.'
       },
       {
-        day: 'Day 3',
+        day: 'Day 2',
         title: 'Trek to Machha Khola (930m)',
         description: 'Begin trek following the Budhi Gandaki River through local villages.'
       },
       {
-        day: 'Day 4',
+        day: 'Day 3',
         title: 'Trek to Jagat (1,410m)',
         description: 'Trek through tropical regions with waterfalls and lush valleys.'
       },
       {
-        day: 'Day 5',
+        day: 'Day 4',
         title: 'Trek to Deng (1,804m)',
         description: 'Enter the restricted area of Manaslu Conservation Area.'
       },
       {
-        day: 'Day 6',
+        day: 'Day 5',
         title: 'Trek to Namrung (2,630m)',
         description: 'Climb through pine and rhododendron forests with mountain views.'
       },
       {
-        day: 'Day 7',
+        day: 'Day 6',
         title: 'Trek to Samagaon (3,530m)',
         description: 'Visit ancient monasteries and experience Tibetan culture.'
       },
       {
-        day: 'Day 8',
+        day: 'Day 7',
         title: 'Acclimatization Day in Samagaon',
         description: 'Rest day with optional hike to Birendra Lake or Manaslu Base Camp.'
       },
       {
-        day: 'Day 9',
+        day: 'Day 8',
         title: 'Trek to Samdo (3,875m)',
         description: 'Short but scenic trek with views of Manaslu and surrounding peaks.'
       },
       {
-        day: 'Day 10',
+        day: 'Day 9',
         title: 'Acclimatization Day in Samdo',
         description: 'Second rest day with optional hike towards Tibetan border.'
       },
       {
-        day: 'Day 11',
+        day: 'Day 10',
         title: 'Trek to Dharamsala (4,460m)',
         description: 'Short but steep climb to the last settlement before the pass.'
       },
       {
+        day: 'Day 11',
+        title: 'Cross Larkya La Pass (5,160m) to Bhimthang (3,720m)',
+        description: 'Early start to cross the challenging pass. Long descent to Bhimthang.'
+      },
+      {
         day: 'Day 12',
-        title: 'Cross Larkya La (5,160m) to Bimthang (3,720m)',
-        description: 'Early start for the challenging pass crossing, offering stunning views.'
+        title: 'Trek to Gho (2,515m)',
+        description: 'Descend through beautiful forests with views of Manaslu.'
       },
       {
         day: 'Day 13',
-        title: 'Trek to Tilije (2,300m)',
-        description: 'Long descent with views of Annapurna II and Lamjung Himal.'
+        title: 'Trek to Dharapani (1,963m)',
+        description: 'Join the Annapurna Circuit trail at Dharapani.'
       },
       {
         day: 'Day 14',
-        title: 'Trek to Dharapani (1,860m)',
-        description: 'Final day of trekking, joining the Annapurna Circuit trail.'
+        title: 'Trek to Jagat (1,300m)',
+        description: 'Continue descent through the Marsyangdi Valley.'
       },
       {
         day: 'Day 15',
-        title: 'Drive to Besisahar and Kathmandu',
-        description: 'Long drive back to Kathmandu via Besisahar.'
+        title: 'Trek to Besisahar',
+        description: 'Final day of trekking to reach Besisahar.'
       },
       {
         day: 'Day 16',
-        title: 'Departure Day',
-        description: 'Transfer to airport for your departure flight.'
+        title: 'Drive to Kathmandu',
+        description: 'Return drive to Kathmandu.'
       }
     ],
     included: [
@@ -381,8 +371,9 @@ const treksData = {
       'Three meals per day during trek',
       'Experienced English-speaking guide',
       'Porter service (2 trekkers:1 porter)',
-      'Manaslu Restricted Area Permit',
+      'Restricted area permit',
       'ACAP and MCAP permits',
+      'TIMS card',
       'First aid and medical kit',
       'All government and local taxes'
     ],
@@ -397,20 +388,20 @@ const treksData = {
     ],
     faqs: [
       {
-        question: 'How difficult is the Manaslu Circuit Trek?',
-        answer: 'This is a challenging trek due to its remote nature, high altitude, and the demanding Larkya La pass (5,160m). Good physical fitness and previous trekking experience are recommended.'
+        question: 'How challenging is Larkya La Pass?',
+        answer: 'Crossing Larkya La Pass (5,160m) is the most challenging part of the trek. It requires early morning start, good fitness, and proper acclimatization. The pass can be snowy and cold throughout the year.'
       },
       {
-        question: 'When is the best time to trek?',
-        answer: 'The best seasons are pre-monsoon (March-May) and post-monsoon (October-November). The Larkya La pass can be dangerous in winter due to snow and ice.'
+        question: 'Why choose Manaslu Circuit?',
+        answer: 'Manaslu Circuit offers a more remote and authentic trekking experience compared to popular routes like Everest Base Camp or Annapurna Circuit. It combines dramatic mountain scenery with rich cultural experiences.'
       },
       {
-        question: 'Do I need special permits?',
-        answer: 'Yes, the Manaslu Circuit requires a Restricted Area Permit and must be done with a registered guide. All necessary permits are included in the trek cost.'
+        question: 'What permits are required?',
+        answer: 'The trek requires several permits: Restricted Area Permit, Manaslu Conservation Area Permit (MCAP), Annapurna Conservation Area Permit (ACAP), and TIMS card. These must be arranged through a registered trekking agency.'
       },
       {
-        question: 'What makes Manaslu Circuit unique?',
-        answer: 'The Manaslu Circuit offers a perfect blend of cultural and natural experiences, from Hindu villages in lower regions to Tibetan Buddhist culture in higher areas. It\'s less crowded than Everest and Annapurna, offering a more authentic trekking experience.'
+        question: 'How is the accommodation?',
+        answer: 'While teahouses are available throughout the route, they are more basic than those found on the Everest or Annapurna trails, especially in the more remote sections. Expect simple but clean accommodation.'
       }
     ],
     gallery: [
@@ -423,7 +414,7 @@ const treksData = {
   'everest-three-pass': {
     title: 'Everest Three High Passes Trek',
     subtitle: 'The ultimate Everest region adventure',
-    overview: 'The Three High Passes Trek is the ultimate Himalayan adventure, designed for experienced trekkers seeking the most comprehensive Everest experience. This challenging route takes you across three spectacular passes - Kongma La (5,535m), Cho La (5,420m), and Renjo La (5,340m), while also including Everest Base Camp, Kala Patthar, and the stunning Gokyo Lakes. Experience the complete grandeur of the Khumbu region, its monasteries, Sherpa villages, and unparalleled views of four 8,000m peaks including Everest, Lhotse, Makalu, and Cho Oyu.',
+    overview: 'The Three High Passes Trek is the ultimate Himalayan adventure, designed for experienced trekkers seeking the most comprehensive Everest experience. Cross three spectacular passes - Kongma La (5,535m), Cho La (5,420m), and Renjo La (5,340m), while visiting Everest Base Camp, Kala Patthar, and the stunning Gokyo Lakes.',
     highlights: [
       'Cross three challenging passes over 5,300m',
       'Summit Kala Patthar (5,545m) for sunrise',
@@ -443,102 +434,92 @@ const treksData = {
       {
         day: 'Day 1',
         title: 'Arrival in Kathmandu (1,400m)',
-        description: 'Welcome to Nepal! Upon arrival at Tribhuvan International Airport, you\'ll be met by our representative and transferred to your hotel in Kathmandu.'
+        description: 'Welcome to Nepal! Airport pickup and transfer to your hotel in Kathmandu.'
       },
       {
         day: 'Day 2',
         title: 'Fly to Lukla (2,800m) and trek to Phakding (2,652m)',
-        description: 'Early morning flight to Lukla. Begin trek through Dudh Koshi Valley to Phakding.'
+        description: 'Early morning flight to Lukla. Begin trek through Dudh Koshi Valley.'
       },
       {
         day: 'Day 3',
         title: 'Trek to Namche Bazaar (3,440m)',
-        description: 'Challenging ascent through pine forests to the famous Sherpa capital of Namche Bazaar.'
+        description: 'Challenging climb to the Sherpa capital with first views of Everest.'
       },
       {
         day: 'Day 4',
-        title: 'Acclimatization Day in Namche Bazaar',
-        description: 'Rest and acclimatization. Optional hike to Everest View Hotel for first views of Mount Everest.'
+        title: 'Acclimatization in Namche Bazaar',
+        description: 'Rest and acclimatization with optional hike to Everest View Hotel.'
       },
       {
         day: 'Day 5',
         title: 'Trek to Tengboche (3,870m)',
-        description: 'Trek to Tengboche, visit the famous monastery and enjoy views of Everest, Lhotse, and Ama Dablam.'
+        description: 'Visit the famous Tengboche Monastery with stunning mountain views.'
       },
       {
         day: 'Day 6',
         title: 'Trek to Dingboche (4,360m)',
-        description: 'Ascend through rhododendron forests to the village of Dingboche.'
+        description: 'Enter the Imja Valley with views of Ama Dablam and Lhotse.'
       },
       {
         day: 'Day 7',
-        title: 'Acclimatization Day in Dingboche',
-        description: 'Second acclimatization day. Optional hike to Nangkartshang Peak for panoramic views.'
+        title: 'Acclimatization in Dingboche',
+        description: 'Rest day with optional hike to Nangkartshang Peak for acclimatization.'
       },
       {
         day: 'Day 8',
-        title: 'Trek to Kongma La Pass (5,535m)',
-        description: 'Cross the first and highest of the three passes, offering stunning views of the Khumbu region.'
+        title: 'Trek to Lobuche (4,940m)',
+        description: 'Trek along the Khumbu Glacier moraine with memorial views.'
       },
       {
         day: 'Day 9',
-        title: 'Trek to Lobuche (4,940m)',
-        description: 'Descend from Kongma La and trek to Lobuche along the Khumbu Glacier.'
+        title: 'Trek to Gorak Shep and EBC (5,364m)',
+        description: 'Visit Everest Base Camp and return to Gorak Shep.'
       },
       {
         day: 'Day 10',
-        title: 'Trek to Gorak Shep and EBC (5,364m)',
-        description: 'Visit Everest Base Camp and return to Gorak Shep for overnight stay.'
+        title: 'Kala Patthar and trek to Dzongla (4,830m)',
+        description: 'Early morning climb to Kala Patthar for sunrise views of Everest.'
       },
       {
         day: 'Day 11',
-        title: 'Kala Patthar and trek to Dzongla (4,830m)',
-        description: 'Early morning climb to Kala Patthar for sunrise views, then trek to Dzongla.'
+        title: 'Cross Cho La Pass (5,420m) to Thangnak',
+        description: 'Challenging pass crossing with glacier travel.'
       },
       {
         day: 'Day 12',
-        title: 'Cross Cho La Pass (5,420m) to Thangnak',
-        description: 'Cross the challenging Cho La Pass and descend to Thangnak.'
+        title: 'Trek to Gokyo (4,790m)',
+        description: 'Trek to the beautiful Gokyo Lakes system.'
       },
       {
         day: 'Day 13',
-        title: 'Trek to Gokyo (4,790m)',
-        description: 'Trek to the beautiful Gokyo Lakes and village.'
+        title: 'Rest day in Gokyo',
+        description: 'Optional climb of Gokyo Ri for panoramic views.'
       },
       {
         day: 'Day 14',
-        title: 'Gokyo Ri (5,357m) and rest day',
-        description: 'Early morning climb of Gokyo Ri for panoramic views. Rest day to explore the lakes.'
+        title: 'Cross Renjo La Pass (5,340m)',
+        description: 'Cross the final pass for unique views of Everest.'
       },
       {
         day: 'Day 15',
-        title: 'Cross Renjo La Pass (5,340m)',
-        description: 'Cross the final pass offering unique views of Everest and surrounding peaks.'
-      },
-      {
-        day: 'Day 16',
         title: 'Trek to Thame (3,820m)',
         description: 'Descend to the historic village of Thame.'
       },
       {
-        day: 'Day 17',
+        day: 'Day 16',
         title: 'Trek to Namche Bazaar',
         description: 'Return trek to Namche Bazaar.'
       },
       {
-        day: 'Day 18',
+        day: 'Day 17',
         title: 'Trek to Lukla',
-        description: 'Final day of trekking, returning to Lukla.'
+        description: 'Final day of trekking back to Lukla.'
       },
       {
-        day: 'Day 19',
+        day: 'Day 18',
         title: 'Fly to Kathmandu',
-        description: 'Morning flight back to Kathmandu. Free afternoon for shopping or relaxation.'
-      },
-      {
-        day: 'Day 20',
-        title: 'Departure Day',
-        description: 'Transfer to airport for your departure flight.'
+        description: 'Morning flight back to Kathmandu.'
       }
     ],
     included: [
@@ -563,20 +544,20 @@ const treksData = {
     ],
     faqs: [
       {
-        question: 'How difficult is the Three Passes Trek?',
-        answer: 'This is one of the most challenging treks in the Everest region, requiring excellent fitness and previous high-altitude trekking experience. The three passes are all over 5,300m and involve steep ascents and descents.'
+        question: 'How challenging are the passes?',
+        answer: 'The three passes (Kongma La, Cho La, and Renjo La) are challenging and require good physical fitness, proper acclimatization, and some basic mountaineering skills. You may encounter snow and ice, especially on Cho La Pass.'
       },
       {
-        question: 'When is the best time to trek?',
-        answer: 'The best seasons are pre-monsoon (March to May) and post-monsoon (late September to November). These periods offer stable weather and clear mountain views. Winter crossings of the passes can be dangerous due to snow and ice.'
+        question: 'Do I need technical climbing skills?',
+        answer: 'While no technical climbing is required, basic crampon and ice axe skills are recommended for crossing Cho La Pass in certain seasons. Your guide will provide necessary instruction.'
       },
       {
-        question: 'Do I need previous trekking experience?',
-        answer: 'Yes, previous high-altitude trekking experience is strongly recommended. This trek is more challenging than the standard EBC trek and requires good stamina and technical walking ability.'
+        question: 'How does this compare to EBC trek?',
+        answer: 'The Three Passes Trek is more challenging and longer than the standard EBC trek. It offers more diverse views, fewer crowds on some sections, and a more comprehensive Everest region experience.'
       },
       {
         question: 'What about altitude sickness?',
-        answer: 'The risk of altitude sickness is higher on this trek due to multiple high passes. The itinerary includes proper acclimatization days, and guides are trained to handle altitude-related issues. We strongly recommend proper travel insurance covering high-altitude trekking.'
+        answer: 'The trek includes proper acclimatization days. Our guides are trained to recognize and respond to altitude sickness symptoms. We recommend proper acclimatization and not rushing the schedule.'
       }
     ],
     gallery: [
@@ -608,53 +589,43 @@ const treksData = {
     itinerary: [
       {
         day: 'Day 1',
-        title: 'Arrival in Kathmandu (1,400m)',
-        description: 'Welcome to Nepal! Airport pickup and transfer to your hotel in Kathmandu.'
-      },
-      {
-        day: 'Day 2',
         title: 'Drive to Syabrubesi (1,550m)',
         description: 'Scenic drive through rural Nepal to Syabrubesi, the starting point of our trek.'
       },
       {
-        day: 'Day 3',
+        day: 'Day 2',
         title: 'Trek to Lama Hotel (2,380m)',
         description: 'Begin trek along the Langtang River through dense forest and local villages.'
       },
       {
-        day: 'Day 4',
+        day: 'Day 3',
         title: 'Trek to Mundu (3,543m)',
         description: 'Trek through rhododendron and pine forests, passing traditional Tamang villages.'
       },
       {
-        day: 'Day 5',
+        day: 'Day 4',
         title: 'Trek to Kyanjin Gompa (3,870m)',
         description: 'Reach the beautiful Kyanjin Gompa, surrounded by snow-capped peaks.'
       },
       {
-        day: 'Day 6',
+        day: 'Day 5',
         title: 'Acclimatization and Exploration Day',
         description: 'Optional hike to Kyanjin Ri (4,773m) for panoramic views or explore the monastery and cheese factory.'
       },
       {
-        day: 'Day 7',
+        day: 'Day 6',
         title: 'Optional Trek to Tserko Ri (4,984m)',
         description: 'Challenging day hike to Tserko Ri for stunning views of the Langtang range.'
       },
       {
-        day: 'Day 8',
+        day: 'Day 7',
         title: 'Trek to Lama Hotel',
         description: 'Begin return journey, descending back to Lama Hotel.'
       },
       {
-        day: 'Day 9',
+        day: 'Day 8',
         title: 'Trek to Syabrubesi',
         description: 'Final day of trekking, returning to Syabrubesi.'
-      },
-      {
-        day: 'Day 10',
-        title: 'Drive to Kathmandu',
-        description: 'Return drive to Kathmandu. Evening free for rest or exploration.'
       }
     ],
     included: [
@@ -663,7 +634,7 @@ const treksData = {
       'Three meals per day during trek',
       'Experienced English-speaking guide',
       'Porter service (2 trekkers:1 porter)',
-      'Langtang National Park permits',
+      'Langtang National Park permit',
       'TIMS card',
       'First aid and medical kit',
       'All government and local taxes'
@@ -679,27 +650,27 @@ const treksData = {
     ],
     faqs: [
       {
-        question: 'How difficult is the Langtang Valley Trek?',
-        answer: 'The trek is considered moderate in difficulty. While it reaches high altitudes, the daily elevation gains are gradual, and the trail is well-maintained. Good physical fitness is still recommended.'
+        question: 'Why choose Langtang Valley?',
+        answer: 'Langtang Valley offers a perfect blend of natural beauty and cultural experiences, with the advantage of being closer to Kathmandu than other major trekking regions. It\'s less crowded than Everest or Annapurna regions while offering equally spectacular views.'
       },
       {
-        question: 'When is the best time to trek?',
-        answer: 'Spring (March-May) and autumn (October-November) are ideal, offering stable weather and clear views. The rhododendrons bloom in spring, adding color to the landscape.'
+        question: 'How challenging is the trek?',
+        answer: 'The trek is considered moderate in difficulty. The trail is well-maintained, and while there are some steep sections, the daily elevation gains are manageable. The trek is suitable for fit beginners.'
       },
       {
-        question: 'Is altitude sickness a concern?',
-        answer: 'While the maximum altitude is lower than some other treks, altitude sickness can still occur above 3,000m. The itinerary includes proper acclimatization, and guides are trained to handle altitude-related issues.'
+        question: 'What about the local culture?',
+        answer: 'The Langtang region is home to Tamang people, who have unique Buddhist culture and traditions. You\'ll have opportunities to visit monasteries, observe local customs, and learn about their way of life.'
       },
       {
-        question: 'What makes Langtang unique?',
-        answer: 'Langtang offers a perfect blend of natural and cultural experiences in a shorter duration. It\'s less crowded than Everest and Annapurna regions, and provides unique insights into Tamang culture and traditions.'
+        question: 'Best time to visit?',
+        answer: 'Spring (March-May) offers rhododendron blooms and clear weather, while autumn (October-November) provides stable conditions and clear mountain views. Winter treks are possible but cold.'
       }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
-      'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
       'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
-      'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
+      'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
     ]
   },
   'upper-mustang': {
@@ -852,6 +823,16 @@ const treksData = {
   'gokyo-ri': {
     title: 'Gokyo Ri Trek',
     subtitle: 'Discover the turquoise lakes of Gokyo Valley',
+    overview: 'The Gokyo Ri trek offers a spectacular alternative to the traditional Everest Base Camp route. Trek through the stunning Gokyo Valley, visit the pristine turquoise Gokyo Lakes, and climb Gokyo Ri (5,357m) for one of the best panoramic views of Everest and surrounding peaks. Experience the serenity of the world\'s highest freshwater lake system and the majesty of the Ngozumpa Glacier.',
+    highlights: [
+      'Climb Gokyo Ri (5,357m) for panoramic views',
+      'Visit the sacred Gokyo Lakes system',
+      'Views of four 8,000m peaks',
+      'Trek along Ngozumpa Glacier',
+      'Experience authentic Sherpa culture',
+      'Less crowded than EBC route',
+      'Stunning mountain panoramas'
+    ],
     duration: '12-14 Days',
     difficulty: 'Moderate to Challenging',
     maxAltitude: '5,357m',
@@ -872,17 +853,17 @@ const treksData = {
       {
         day: 'Day 3',
         title: 'Trek to Namche Bazaar (3,440m)',
-        description: 'Challenging climb to the famous Sherpa capital of Namche Bazaar.'
+        description: 'Challenging climb to the famous Sherpa capital with first views of Everest.'
       },
       {
         day: 'Day 4',
-        title: 'Acclimatization Day in Namche',
+        title: 'Acclimatization in Namche',
         description: 'Rest and acclimatization with optional hike to Everest View Hotel.'
       },
       {
         day: 'Day 5',
         title: 'Trek to Dole (4,200m)',
-        description: 'Leave the main Everest trail and head towards Gokyo Valley.'
+        description: 'Leave the main Everest trail and head towards Gokyo Valley through rhododendron forests.'
       },
       {
         day: 'Day 6',
@@ -901,28 +882,28 @@ const treksData = {
       },
       {
         day: 'Day 9',
-        title: 'Trek to Dole',
-        description: 'Begin descent with continued views of the Gokyo Valley.'
+        title: 'Explore Gokyo Valley',
+        description: 'Visit the fourth and fifth Gokyo lakes, explore Ngozumpa Glacier.'
       },
       {
         day: 'Day 10',
-        title: 'Trek to Namche Bazaar',
-        description: 'Return to Namche through rhododendron forests.'
+        title: 'Trek to Dole (4,200m)',
+        description: 'Begin descent with continued views of the Gokyo Valley.'
       },
       {
         day: 'Day 11',
-        title: 'Trek to Lukla',
-        description: 'Final day of trekking, returning to Lukla.'
+        title: 'Trek to Namche Bazaar (3,440m)',
+        description: 'Return trek to the Sherpa capital of Namche Bazaar.'
       },
       {
         day: 'Day 12',
-        title: 'Fly to Kathmandu',
-        description: 'Morning flight back to Kathmandu.'
+        title: 'Trek to Lukla (2,800m)',
+        description: 'Final day of trekking back to Lukla.'
       },
       {
         day: 'Day 13',
-        title: 'Departure Day',
-        description: 'Transfer to airport for your departure flight.'
+        title: 'Fly to Kathmandu',
+        description: 'Morning flight back to Kathmandu.'
       }
     ],
     included: [
@@ -932,8 +913,7 @@ const treksData = {
       'Three meals per day during trek',
       'Experienced English-speaking guide',
       'Porter service (2 trekkers:1 porter)',
-      'Sagarmatha National Park permit',
-      'TIMS card',
+      'All necessary permits and fees',
       'First aid and medical kit',
       'All government and local taxes'
     ],
@@ -1284,6 +1264,456 @@ const treksData = {
       'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
       'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
       'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
+    ]
+  },
+  'annapurna-circuit': {
+    title: 'Annapurna Circuit Trek',
+    subtitle: 'The complete journey around Annapurna massif',
+    overview: 'The Annapurna Circuit is one of the world\'s most iconic treks, offering unparalleled diversity in landscape, culture, and climate zones. Circle the entire Annapurna massif, crossing the challenging Thorong La Pass (5,416m), and experience everything from subtropical forests to high-altitude desert plateaus.',
+    highlights: [
+      'Cross Thorong La Pass (5,416m)',
+      'Visit ancient Buddhist temples',
+      'Experience diverse cultures',
+      'Trek through world\'s deepest gorge',
+      'Natural hot springs at Tatopani',
+      'Apple orchards of Marpha',
+      'Stunning views of Annapurna range'
+    ],
+    duration: '14-18 Days',
+    difficulty: 'Moderate to Challenging',
+    maxAltitude: '5,416m',
+    bestSeason: 'Mar - May, Oct - Nov',
+    accommodation: 'Teahouse',
+    startEndPoint: 'Besisahar/Pokhara',
+    itinerary: [
+      {
+        day: 'Day 1',
+        title: 'Arrival in Kathmandu (1,400m)',
+        description: 'Welcome to Nepal! Airport pickup and transfer to your hotel in Kathmandu.'
+      },
+      {
+        day: 'Day 2',
+        title: 'Drive to Besisahar (760m)',
+        description: 'Scenic drive through rural Nepal to reach the trek starting point.'
+      },
+      {
+        day: 'Day 3',
+        title: 'Trek to Bahundanda (1,310m)',
+        description: 'Begin trek through terraced fields and local villages.'
+      },
+      {
+        day: 'Day 4',
+        title: 'Trek to Jagat (1,300m)',
+        description: 'Follow the Marsyangdi River through traditional villages.'
+      },
+      {
+        day: 'Day 5',
+        title: 'Trek to Dharapani (1,960m)',
+        description: 'Enter the Manang district with views of Manaslu range.'
+      },
+      {
+        day: 'Day 6',
+        title: 'Trek to Chame (2,710m)',
+        description: 'Trek through pine forests with views of Annapurna II.'
+      },
+      {
+        day: 'Day 7',
+        title: 'Trek to Pisang (3,300m)',
+        description: 'Enter the upper Manang region with dramatic mountain views.'
+      },
+      {
+        day: 'Day 8',
+        title: 'Trek to Manang (3,540m)',
+        description: 'Visit ancient monasteries and enjoy panoramic mountain views.'
+      },
+      {
+        day: 'Day 9',
+        title: 'Acclimatization in Manang',
+        description: 'Rest day with optional hike to Ice Lake for acclimatization.'
+      },
+      {
+        day: 'Day 10',
+        title: 'Trek to Yak Kharka (4,018m)',
+        description: 'Short but steady climb through high-altitude terrain.'
+      },
+      {
+        day: 'Day 11',
+        title: 'Trek to Thorong Phedi (4,450m)',
+        description: 'Final preparation before crossing Thorong La Pass.'
+      },
+      {
+        day: 'Day 12',
+        title: 'Cross Thorong La Pass (5,416m) to Muktinath (3,800m)',
+        description: 'Early morning start to cross the challenging pass. Descend to the holy temple town of Muktinath.'
+      },
+      {
+        day: 'Day 13',
+        title: 'Trek to Marpha (2,670m)',
+        description: 'Trek through Kali Gandaki Valley to the charming apple capital.'
+      },
+      {
+        day: 'Day 14',
+        title: 'Trek to Tatopani (1,200m)',
+        description: 'Descend through the world\'s deepest gorge. Evening hot springs.'
+      },
+      {
+        day: 'Day 15',
+        title: 'Trek to Ghorepani (2,860m)',
+        description: 'Climb through rhododendron forests to panoramic viewpoint.'
+      },
+      {
+        day: 'Day 16',
+        title: 'Poon Hill sunrise and trek to Nayapul',
+        description: 'Early morning hike for sunrise views. Trek to road head and drive to Pokhara.'
+      }
+    ],
+    included: [
+      'All ground transportation',
+      'Teahouse accommodation during trek',
+      'Three meals per day during trek',
+      'Experienced English-speaking guide',
+      'Porter service (2 trekkers:1 porter)',
+      'ACAP permit and TIMS card',
+      'First aid and medical kit',
+      'All government and local taxes'
+    ],
+    excluded: [
+      'International airfare',
+      'Nepal visa fee',
+      'Travel insurance',
+      'Personal expenses',
+      'Tips for guides and porters',
+      'Bar and beverage bills',
+      'Extra activities not included in itinerary'
+    ],
+    faqs: [
+      {
+        question: 'How challenging is Thorong La Pass?',
+        answer: 'Crossing Thorong La Pass (5,416m) is the most challenging part of the trek. It requires early morning start, good fitness, and proper acclimatization. The pass can be snowy and cold, especially outside peak seasons.'
+      },
+      {
+        question: 'What about altitude sickness?',
+        answer: 'The trek includes proper acclimatization days in Manang. Our guides are trained to recognize and respond to altitude sickness symptoms. We recommend not rushing the schedule and staying hydrated.'
+      },
+      {
+        question: 'Can I do a shorter version?',
+        answer: 'Yes, with new road access, it\'s possible to do shorter variations of the circuit. However, we recommend the full circuit for the complete experience and proper acclimatization.'
+      },
+      {
+        question: 'What makes this trek special?',
+        answer: 'The Annapurna Circuit offers unmatched diversity - from subtropical valleys to alpine zones, Hindu villages to Buddhist monasteries, and lush forests to desert plateaus. It\'s often called a "Natural and Cultural Museum in motion."'
+      }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
+    ]
+  },
+  'langtang-gosaikunda': {
+    title: 'Langtang Gosaikunda Trek',
+    subtitle: 'A Pilgrimage to the Enchanting Alpine Lakes',
+    overview: 'The Langtang Gosaikunda Trek combines the natural beauty of the Langtang Valley with a pilgrimage to the sacred high-altitude lakes of Gosaikunda. This trek offers a perfect blend of cultural immersion, stunning mountain vistas, and spiritual significance. The trail takes you through dense forests, traditional Tamang villages, and high alpine terrain, culminating at the sacred Gosaikunda Lakes, believed to have been created by Lord Shiva.',
+    highlights: [
+      'Visit the sacred Gosaikunda Lakes (4,380m)',
+      'Experience rich Tamang culture',
+      'Trek through diverse landscapes',
+      'View stunning Langtang range',
+      'Visit ancient monasteries',
+      'Cross the challenging Laurebina Pass',
+      'Explore traditional mountain villages'
+    ],
+    duration: '14-16 Days',
+    difficulty: 'Moderate to Challenging',
+    maxAltitude: '4,380m',
+    bestSeason: 'Mar - May, Sep - Nov',
+    accommodation: 'Teahouse/Lodge',
+    startEndPoint: 'Syabrubesi/Dhunche',
+    itinerary: [
+      {
+        day: 'Day 1',
+        title: 'Drive to Syabrubesi (1,550m)',
+        description: 'Scenic drive from Kathmandu through rural landscapes to Syabrubesi.'
+      },
+      {
+        day: 'Day 2',
+        title: 'Trek to Lama Hotel (2,380m)',
+        description: 'Begin trek along the Langtang River through dense forest.'
+      },
+      {
+        day: 'Day 3',
+        title: 'Trek to Mundu (3,543m)',
+        description: 'Trek through rhododendron forests and traditional Tamang villages.'
+      },
+      {
+        day: 'Day 4',
+        title: 'Trek to Kyanjin Gompa (3,870m)',
+        description: 'Visit the historic monastery and enjoy mountain views.'
+      },
+      {
+        day: 'Day 5',
+        title: 'Acclimatization Day',
+        description: 'Optional hike to Kyanjin Ri (4,773m) for panoramic views.'
+      },
+      {
+        day: 'Day 6',
+        title: 'Trek to Lama Hotel (2,380m)',
+        description: 'Begin return journey through the valley.'
+      },
+      {
+        day: 'Day 7',
+        title: 'Trek to Thulo Syabru (2,260m)',
+        description: 'Cross to the Gosaikunda trail, enjoying valley views.'
+      },
+      {
+        day: 'Day 8',
+        title: 'Trek to Sing Gompa (3,330m)',
+        description: 'Steep climb through forests to the Buddhist monastery.'
+      },
+      {
+        day: 'Day 9',
+        title: 'Trek to Gosaikunda (4,380m)',
+        description: 'Reach the sacred lakes with views of the Langtang range.'
+      },
+      {
+        day: 'Day 10',
+        title: 'Rest Day at Gosaikunda',
+        description: 'Explore the lakes and surrounding area, optional puja ceremony.'
+      },
+      {
+        day: 'Day 11',
+        title: 'Cross Laurebina Pass (4,610m) to Ghopte (3,430m)',
+        description: 'Challenging pass crossing with spectacular mountain views.'
+      },
+      {
+        day: 'Day 12',
+        title: 'Trek to Kutumsang (2,470m)',
+        description: 'Descend through rhododendron forests and meadows.'
+      },
+      {
+        day: 'Day 13',
+        title: 'Trek to Chisapani (2,215m)',
+        description: 'Final full day of trekking with views of the Kathmandu Valley.'
+      },
+      {
+        day: 'Day 14',
+        title: 'Trek to Sundarijal and drive to Kathmandu',
+        description: 'Short trek and return to Kathmandu.'
+      }
+    ],
+    included: [
+      'All ground transportation',
+      'Teahouse accommodation during trek',
+      'Three meals per day during trek',
+      'Experienced English-speaking guide',
+      'Porter service (2 trekkers:1 porter)',
+      'Langtang National Park permit',
+      'TIMS card',
+      'First aid and medical kit',
+      'All government and local taxes'
+    ],
+    excluded: [
+      'International airfare',
+      'Nepal visa fee',
+      'Travel insurance',
+      'Personal expenses',
+      'Tips for guides and porters',
+      'Bar and beverage bills',
+      'Extra activities not included in itinerary'
+    ],
+    faqs: [
+      {
+        question: 'What makes Gosaikunda Lakes special?',
+        answer: 'Gosaikunda is a sacred site in Hindu and Buddhist traditions, believed to have been created by Lord Shiva. The lakes are also important for their unique high-altitude ecosystem.'
+      },
+      {
+        question: 'How challenging is the trek?',
+        answer: 'The trek is moderate to challenging, with the most difficult section being the Laurebina Pass crossing. Good fitness and proper acclimatization are essential.'
+      },
+      {
+        question: 'What about altitude sickness?',
+        answer: 'The trek includes proper acclimatization days. The highest point is Laurebina Pass at 4,610m. Our guides are trained to recognize and respond to altitude sickness symptoms.'
+      },
+      {
+        question: 'Best time to visit?',
+        answer: 'Spring (March-May) offers rhododendron blooms and clear weather, while autumn (September-November) provides stable conditions. Winter visits to Gosaikunda are not recommended due to extreme cold and snow.'
+      }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
+    ]
+  },
+  'kanchenjunga-circuit': {
+    title: 'Kanchenjunga Circuit Trek',
+    subtitle: 'Trek around the world\'s third highest peak',
+    overview: 'The Kanchenjunga Circuit Trek is a challenging and remote adventure that takes you around Mount Kanchenjunga (8,586m), the world\'s third-highest peak. This trek offers a perfect blend of cultural immersion, pristine wilderness, and spectacular mountain views. Journey through remote villages, dense forests, and high alpine terrain while experiencing the unique culture of eastern Nepal.',
+    highlights: [
+      'Views of Kanchenjunga (8,586m)',
+      'Visit both North and South Base Camps',
+      'Cross challenging high passes',
+      'Experience remote village life',
+      'Rich biodiversity and wildlife',
+      'Unique local culture and traditions',
+      'Pristine wilderness experience'
+    ],
+    duration: '20-22 Days',
+    difficulty: 'Challenging',
+    maxAltitude: '5,140m',
+    bestSeason: 'Mar - May, Sep - Nov',
+    accommodation: 'Basic Teahouse/Camping',
+    startEndPoint: 'Taplejung',
+    itinerary: [
+      {
+        day: 'Day 1',
+        title: 'Fly to Bhadrapur and drive to Taplejung (1,820m)',
+        description: 'Flight to eastern Nepal and scenic drive to trek starting point.'
+      },
+      {
+        day: 'Day 2',
+        title: 'Trek to Mitlung (921m)',
+        description: 'Begin trek following the Tamor River through villages and farmland.'
+      },
+      {
+        day: 'Day 3',
+        title: 'Trek to Chirwa (1,270m)',
+        description: 'Trek through small settlements and cardamom forests.'
+      },
+      {
+        day: 'Day 4',
+        title: 'Trek to Sekathum (1,576m)',
+        description: 'Follow the Ghunsa Khola River, entering the Kanchenjunga Conservation Area.'
+      },
+      {
+        day: 'Day 5',
+        title: 'Trek to Amjilossa (2,308m)',
+        description: 'Steep climb through dense forest with mountain views.'
+      },
+      {
+        day: 'Day 6',
+        title: 'Trek to Gyabla (2,730m)',
+        description: 'Trek through rhododendron and bamboo forests.'
+      },
+      {
+        day: 'Day 7',
+        title: 'Trek to Ghunsa (3,595m)',
+        description: 'Reach the main Tibetan village of the upper valley.'
+      },
+      {
+        day: 'Day 8',
+        title: 'Acclimatization Day in Ghunsa',
+        description: 'Rest and explore the traditional village and monastery.'
+      },
+      {
+        day: 'Day 9',
+        title: 'Trek to Khambachen (4,050m)',
+        description: 'Trek along the river with views of Jannu Himal.'
+      },
+      {
+        day: 'Day 10',
+        title: 'Acclimatization Day in Khambachen',
+        description: 'Rest day with optional hike for better views.'
+      },
+      {
+        day: 'Day 11',
+        title: 'Trek to Lhonak (4,780m)',
+        description: 'Trek through high alpine terrain with glacier views.'
+      },
+      {
+        day: 'Day 12',
+        title: 'Visit Kanchenjunga North Base Camp (5,140m)',
+        description: 'Day trip to North Base Camp for spectacular mountain views.'
+      },
+      {
+        day: 'Day 13',
+        title: 'Trek to Ghunsa (3,595m)',
+        description: 'Begin return journey, descending to Ghunsa.'
+      },
+      {
+        day: 'Day 14',
+        title: 'Trek to Sele Le Base Camp (4,480m)',
+        description: 'Climb towards Sele Le Pass through high alpine terrain.'
+      },
+      {
+        day: 'Day 15',
+        title: 'Cross Sele Le Pass (4,780m) to Tseram (3,870m)',
+        description: 'Challenging pass crossing with views of both sides of Kanchenjunga.'
+      },
+      {
+        day: 'Day 16',
+        title: 'Visit Kanchenjunga South Base Camp (4,730m)',
+        description: 'Day trip to South Base Camp for different perspective of Kanchenjunga.'
+      },
+      {
+        day: 'Day 17',
+        title: 'Trek to Tortong (2,995m)',
+        description: 'Begin descent through changing vegetation zones.'
+      },
+      {
+        day: 'Day 18',
+        title: 'Trek to Yamphudin (2,080m)',
+        description: 'Trek through mixed forests and local villages.'
+      },
+      {
+        day: 'Day 19',
+        title: 'Trek to Khebang (1,740m)',
+        description: 'Continue descent through rural settlements.'
+      },
+      {
+        day: 'Day 20',
+        title: 'Trek to Taplejung (1,820m)',
+        description: 'Final day of trekking back to Taplejung.'
+      }
+    ],
+    included: [
+      'All ground transportation',
+      'Basic teahouse/camping accommodation',
+      'Three meals per day during trek',
+      'Experienced English-speaking guide',
+      'Porter service (2 trekkers:1 porter)',
+      'Kanchenjunga Conservation Area permit',
+      'Restricted Area permit',
+      'TIMS card',
+      'Camping equipment when needed',
+      'First aid and medical kit',
+      'All government and local taxes'
+    ],
+    excluded: [
+      'International airfare',
+      'Domestic flights',
+      'Nepal visa fee',
+      'Travel insurance',
+      'Personal expenses',
+      'Tips for guides and porters',
+      'Bar and beverage bills',
+      'Extra activities not included in itinerary'
+    ],
+    faqs: [
+      {
+        question: 'Why choose Kanchenjunga Circuit?',
+        answer: 'This trek offers a unique combination of cultural immersion and wilderness experience. It\'s less crowded than popular treks, provides views of the world\'s third-highest peak, and lets you experience authentic village life in remote Nepal.'
+      },
+      {
+        question: 'How challenging is the trek?',
+        answer: 'This is a challenging trek due to its length, remoteness, and altitude. Multiple high passes, basic accommodation, and variable weather conditions make it suitable for experienced trekkers only.'
+      },
+      {
+        question: 'What about accommodation?',
+        answer: 'Accommodation is basic, with a mix of teahouses and camping depending on the section. Facilities are more basic than on popular trekking routes, and some sections may require camping.'
+      },
+      {
+        question: 'Do I need special permits?',
+        answer: 'Yes, this trek requires multiple permits: Kanchenjunga Conservation Area permit, Restricted Area permit (minimum 2 people required), and TIMS card. All permits are included in the package.'
+      }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1542082012-cd3d95983588?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      'https://images.unsplash.com/photo-1519981337-7295e387c157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80'
     ]
   }
 };

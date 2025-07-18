@@ -1,167 +1,237 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-export default function Contact() {
+const Contact = () => {
+  const [searchParams] = useSearchParams();
+  const inquiryType = searchParams.get('type');
+
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
+    gender: '',
     email: '',
-    subject: '',
-    message: ''
+    address: '',
+    phone: '',
+    destination: '',
+    groupSize: '',
+    message: '',
+    inquiryType: inquiryType || 'general'
   });
+
+  useEffect(() => {
+    // Set default message based on inquiry type
+    let defaultMessage = '';
+    let title = 'Contact Us';
+    
+    switch(inquiryType) {
+      case 'expedition':
+        defaultMessage = 'I am interested in booking an expedition...';
+        title = 'Expedition Enquiry';
+        break;
+      case 'virtual':
+        defaultMessage = 'I would like to schedule a virtual call to discuss...';
+        title = 'Virtual Call Request';
+        break;
+      case 'general':
+        defaultMessage = 'I have a general inquiry about...';
+        title = 'General Enquiry';
+        break;
+      default:
+        break;
+    }
+
+    setFormData(prev => ({
+      ...prev,
+      message: defaultMessage,
+      inquiryType: inquiryType || 'general'
+    }));
+  }, [inquiryType]);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    // Handle form submission here
+    console.log(formData);
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
-        
+    <div className="min-h-screen bg-white py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Contact Info Section */}
+          <div className="space-y-8">
+            <h2 className="text-3xl font-bold text-gray-900">CONTACT INFO</h2>
+            
+            {/* Address */}
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <div className="w-10 h-10 bg-[#F28C38] rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
-                </label>
+                <p className="text-gray-600">Dhumbarahi,Lazimpat</p>
+                <p className="font-semibold text-gray-900">Kathmandu,Nepal</p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <div className="w-10 h-10 bg-[#F28C38] rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <p className="text-gray-600">Call us 24*7 Support</p>
+                <p className="font-semibold text-gray-900">+977-9856008848</p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <div className="w-10 h-10 bg-[#F28C38] rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <p className="text-gray-600">Email us at</p>
+                <p className="font-semibold text-gray-900">info@infinityadventurenepal.com</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              {inquiryType === 'expedition' ? 'Expedition Enquiry' :
+               inquiryType === 'virtual' ? 'Virtual Call Request' :
+               'General Enquiry'}
+            </h2>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Full Name */}
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  name="fullName"
+                  placeholder="Full Name"
+                  value={formData.fullName}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#F28C38] focus:border-[#F28C38]"
                   required
                 />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
+
+                {/* Gender */}
+                <select
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#F28C38] focus:border-[#F28C38]"
+                >
+                  <option value="">Select Gender (Optional)</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+
+                {/* Email */}
                 <input
                   type="email"
-                  id="email"
                   name="email"
+                  placeholder="Email Address"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#F28C38] focus:border-[#F28C38]"
                   required
                 />
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                  Subject
-                </label>
+
+                {/* Address */}
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
+                  name="address"
+                  placeholder="Address"
+                  value={formData.address}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#F28C38] focus:border-[#F28C38]"
+                />
+
+                {/* Phone */}
+                <div className="flex">
+                  <select
+                    className="w-20 px-2 py-2 border border-r-0 border-gray-300 rounded-l-md focus:ring-[#F28C38] focus:border-[#F28C38]"
+                  >
+                    <option value="+1">+1</option>
+                    <option value="+977">+977</option>
+                  </select>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-l-0 border-gray-300 rounded-r-md focus:ring-[#F28C38] focus:border-[#F28C38]"
+                  />
+                </div>
+
+                {/* Destination */}
+                <input
+                  type="text"
+                  name="destination"
+                  placeholder="Destination (Optional)"
+                  value={formData.destination}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#F28C38] focus:border-[#F28C38]"
                 />
               </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                  required
-                />
-              </div>
-              
+
+              {/* Group Size */}
+              <input
+                type="text"
+                name="groupSize"
+                placeholder="Group Size (Optional)"
+                value={formData.groupSize}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#F28C38] focus:border-[#F28C38]"
+              />
+
+              {/* Message */}
+              <textarea
+                name="message"
+                placeholder="Message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#F28C38] focus:border-[#F28C38]"
+                required
+              ></textarea>
+
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 transition-colors"
+                className="w-32 bg-[#F28C38] text-white py-2 px-6 rounded-md hover:bg-[#E67D2E] transition-colors duration-300"
               >
-                Send Message
+                Submit
               </button>
             </form>
           </div>
-          
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-semibold text-primary-600 mb-4">Get in Touch</h2>
-              <p className="text-gray-600">
-                Have questions about our expeditions or want to plan a custom adventure? 
-                We're here to help! Reach out to us through the contact form or use the 
-                information below.
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div>
-                  <h3 className="font-semibold">Address</h3>
-                  <p className="text-gray-600">123 Adventure Street</p>
-                  <p className="text-gray-600">Mountain View, CA 94043</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <div>
-                  <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">info@wildsteps.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <svg className="w-6 h-6 text-primary-600 mt-1 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <div>
-                  <h3 className="font-semibold">Phone</h3>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-primary-50 p-6 rounded-lg">
-              <h3 className="font-semibold mb-2">Business Hours</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p>Saturday: 10:00 AM - 4:00 PM</p>
-                <p>Sunday: Closed</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
-} 
+};
+
+export default Contact; 

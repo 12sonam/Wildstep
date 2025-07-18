@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, BrowserRouter as Router } from 'react-router-dom';
 import { useState } from 'react';
 import { TrekProvider } from './context/TrekContext';
 import Navbar from './components/Navbar';
@@ -13,6 +13,9 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Login from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
+import GeneralEnquiry from './pages/GeneralEnquiry';
+import ExpeditionEnquiry from './pages/ExpeditionEnquiry';
+import VirtualCallEnquiry from './pages/VirtualCallEnquiry';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -28,6 +31,7 @@ function App() {
   };
 
   return (
+    <Router>
     <div className="min-h-screen flex flex-col">
       <TrekProvider>
         <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
@@ -40,6 +44,9 @@ function App() {
             <Route path="/trekking/:id" element={<TrekkingDetail />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
+              <Route path="/enquire/general" element={<GeneralEnquiry />} />
+              <Route path="/enquire/expedition" element={<ExpeditionEnquiry />} />
+              <Route path="/enquire/virtual-call" element={<VirtualCallEnquiry />} />
             <Route
               path="/admin/login"
               element={<Login setIsAuthenticated={setIsAuthenticated} />}
@@ -57,6 +64,7 @@ function App() {
         <Footer />
       </TrekProvider>
     </div>
+    </Router>
   );
 }
 
