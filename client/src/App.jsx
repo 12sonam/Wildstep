@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate, BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import { TrekProvider } from './context/TrekContext';
 import Navbar from './components/Navbar';
@@ -31,7 +31,6 @@ function App() {
   };
 
   return (
-    <Router>
     <div className="min-h-screen flex flex-col">
       <TrekProvider>
         <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
@@ -44,9 +43,9 @@ function App() {
             <Route path="/trekking/:id" element={<TrekkingDetail />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
-              <Route path="/enquire/general" element={<GeneralEnquiry />} />
-              <Route path="/enquire/expedition" element={<ExpeditionEnquiry />} />
-              <Route path="/enquire/virtual-call" element={<VirtualCallEnquiry />} />
+            <Route path="/enquire/general" element={<GeneralEnquiry />} />
+            <Route path="/enquire/expedition" element={<ExpeditionEnquiry />} />
+            <Route path="/enquire/virtual-call" element={<VirtualCallEnquiry />} />
             <Route
               path="/admin/login"
               element={<Login setIsAuthenticated={setIsAuthenticated} />}
@@ -64,8 +63,7 @@ function App() {
         <Footer />
       </TrekProvider>
     </div>
-    </Router>
   );
 }
 
-export default App; 
+export default App;

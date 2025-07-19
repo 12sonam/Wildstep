@@ -166,16 +166,10 @@ const GeneralEnquiry = () => {
               </button>
             </div>
           </form>
-
-          {/* Company Address */}
-          <div className="mt-16">
-            <h3 className="text-gray-700 font-medium">Elite HQ</h3>
-            <p className="text-gray-600">Elite Exped, 2 St. Giles Square, London, England, WC2H 8AP</p>
-          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default GeneralEnquiry; 
+export default GeneralEnquiry;

@@ -95,7 +95,7 @@ export default function Navbar() {
     },
     {
       name: 'ENQUIRE',
-      path: '/enquire/general',
+      path: '#',
       dropdown: [
         { 
           name: 'General Enquiry',
@@ -378,57 +378,58 @@ export default function Navbar() {
                                 GET IN TOUCH
                               </h3>
                               {item.dropdown.map((dropdownItem) => (
-                                <button
+                                <Link
                                   key={dropdownItem.name}
-                                  onClick={() => {
-                                    dropdownItem.onClick();
-                                    setActiveDropdown(null);
-                                  }}
-                                  className="block w-full text-left py-3 text-base text-white hover:bg-[#F28C38]/20 hover:text-[#F28C38] px-4 rounded-md transition-all duration-200 cursor-pointer"
+                                  to={dropdownItem.name === 'General Enquiry' ? '/enquire/general' :
+                                      dropdownItem.name === 'Exped Enquiry' ? '/enquire/expedition' :
+                                      '/enquire/virtual-call'}
+                                  className="block py-3 text-base text-white hover:bg-[#F28C38]/20 hover:text-[#F28C38] px-4 rounded-md transition-all duration-200 cursor-pointer"
+                                  onClick={() => setActiveDropdown(null)}
                                 >
                                   {dropdownItem.name}
-                                </button>
+                                </Link>
                               ))}
                             </div>
                             
-                            {/* Right side - Images */}
+                            {/* Right side - Featured content */}
                             <div className="col-span-4">
                               <div className="grid grid-cols-3 gap-8">
-                                {/* Image 1 */}
-                                <div className="group cursor-pointer overflow-hidden rounded-lg">
-                                  <div className="aspect-w-16 aspect-h-9">
-                                    <img 
-                                      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
-                                      alt="Mountain Peak"
-                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                  </div>
-                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-                                </div>
-
-                                {/* Image 2 */}
-                                <div className="group cursor-pointer overflow-hidden rounded-lg">
-                                  <div className="aspect-w-16 aspect-h-9">
+                                {/* Featured Image 1 */}
+                                <Link to="/enquire/general" className="group" onClick={() => setActiveDropdown(null)}>
+                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                     <img 
                                       src="https://images.unsplash.com/photo-1516302350523-4c29d47b89e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
-                                      alt="Mountain Expedition"
+                                      alt="General Enquiry"
                                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                   </div>
-                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-                                </div>
-
-                                {/* Image 3 */}
-                                <div className="group cursor-pointer overflow-hidden rounded-lg">
-                                  <div className="aspect-w-16 aspect-h-9">
+                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">General Enquiry</h3>
+                                  <p className="mt-2 text-sm text-gray-400">Have a question? We're here to help!</p>
+                                </Link>
+                                {/* Featured Image 2 */}
+                                <Link to="/enquire/expedition" className="group" onClick={() => setActiveDropdown(null)}>
+                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                    <img 
+                                      src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+                                      alt="Expedition Enquiry"
+                                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  </div>
+                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Expedition Enquiry</h3>
+                                  <p className="mt-2 text-sm text-gray-400">Plan your next adventure with us</p>
+                                </Link>
+                                {/* Featured Image 3 */}
+                                <Link to="/enquire/virtual-call" className="group" onClick={() => setActiveDropdown(null)}>
+                                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
                                     <img 
                                       src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
-                                      alt="Mountain View"
+                                      alt="Virtual Call"
                                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                   </div>
-                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
-                                </div>
+                                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-[#F28C38] transition-colors">Virtual Call</h3>
+                                  <p className="mt-2 text-sm text-gray-400">Schedule a virtual meeting with our experts</p>
+                                </Link>
                               </div>
                             </div>
                           </div>
